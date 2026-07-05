@@ -8,11 +8,6 @@ export function SmoothScroll({ children }: { children: React.ReactNode }) {
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Apple-like smooth scroll
-      direction: "vertical",
-      gestureDirection: "vertical",
-      smooth: true,
-      smoothTouch: false, // Don't interfere with native mobile touch
-      touchMultiplier: 2,
     });
 
     function raf(time: number) {
