@@ -5,6 +5,7 @@ import { ShieldCheck, MapPin, Bug, Star, Navigation } from 'lucide-react';
 import Link from 'next/link';
 import { RoseButton } from '@/components/ui/RoseButton';
 import Script from 'next/script';
+import { tckBranches } from '@/data/branches';
 
 export const dynamicParams = true;
 
@@ -13,10 +14,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const resolvedParams = await params;
   const slugParts = resolvedParams.slug.split('-');
   
-  // Basic parser for "sisli-fabrika-fare-ilaclama"
-  const district = slugParts[0] ? slugParts[0].charAt(0).toUpperCase() + slugParts[0].slice(1) : 'İstanbul';
-  const place = slugParts[1] ? slugParts[1].charAt(0).toUpperCase() + slugParts[1].slice(1) : 'Alan';
-  const pest = slugParts[2] ? slugParts[2].charAt(0).toUpperCase() + slugParts[2].slice(1) : 'Haşere';
+  // Basic parser for "istanbul-kadikoy-fabrika-fare-ilaclama"
+  const district = slugParts[1] ? slugParts[1].charAt(0).toUpperCase() + slugParts[1].slice(1) : 'İstanbul';
+  const place = slugParts[2] ? slugParts[2].charAt(0).toUpperCase() + slugParts[2].slice(1) : 'Alan';
+  const pest = slugParts[3] ? slugParts[3].charAt(0).toUpperCase() + slugParts[3].slice(1) : 'Haşere';
 
   const title = `${district} ${place} ${pest} İlaçlama | Garantili Çözüm`;
   const description = `${district} bölgesinde ${place} alanları için %100 garantili ${pest.toLowerCase()} ilaçlama hizmeti. Acil müdahale ve kokusuz koruma kalkanı.`;
@@ -39,9 +40,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 export default async function ServiceSlugPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
   const slugParts = resolvedParams.slug.split('-');
-  const district = slugParts[0] ? slugParts[0].charAt(0).toUpperCase() + slugParts[0].slice(1) : 'İstanbul';
-  const place = slugParts[1] ? slugParts[1].charAt(0).toUpperCase() + slugParts[1].slice(1) : 'Alan';
-  const pest = slugParts[2] ? slugParts[2].charAt(0).toUpperCase() + slugParts[2].slice(1) : 'Haşere';
+  
+  // Basic parser
+  const district = slugParts[1] ? slugParts[1].charAt(0).toUpperCase() + slugParts[1].slice(1) : 'İstanbul';
+  const place = slugParts[2] ? slugParts[2].charAt(0).toUpperCase() + slugParts[2].slice(1) : 'Alan';
+  const pest = slugParts[3] ? slugParts[3].charAt(0).toUpperCase() + slugParts[3].slice(1) : 'Haşere';
+
+  const branch = tckBranches.find(b => b.district.toLowerCase() === district.toLowerCase());
 
   return (
     <>
@@ -117,7 +122,7 @@ export default async function ServiceSlugPage({ params }: { params: Promise<{ sl
               <div>
                 <h3 className="text-2xl font-bold text-white mb-4">{district} Bölgesi Operasyon Merkezi</h3>
                 <p className="text-slate-400 mb-6">Müdahale araçlarımız ve uzman biyosidal ekiplerimiz {district} lokasyonunda 7/24 hazır beklemektedir. Acil fümigasyon veya standart ilaçlama için hemen yol tarifi alabilirsiniz.</p>
-                <a href={`https://www.google.com/maps/dir/?api=1&destination=${district}+istanbul+ilaclama`} target="_blank" rel="noopener noreferrer">
+                <a href={branch ? branch.url : `https://www.google.com/maps/dir/?api=1&destination=${district}+istanbul+ilaclama`} target="_blank" rel="noopener noreferrer">
                   <button className="flex items-center gap-3 bg-brand hover:bg-brand-hover text-white px-6 py-3 rounded-xl transition-colors font-semibold shadow-lg shadow-brand/20">
                     <Navigation className="w-5 h-5" />
                     Bulunduğunuz Konumdan Yol Tarifi Alın
@@ -126,7 +131,7 @@ export default async function ServiceSlugPage({ params }: { params: Promise<{ sl
               </div>
               <div className="h-[300px] w-full rounded-2xl overflow-hidden border border-white/10">
                 <iframe 
-                  src={`https://maps.google.com/maps?q=${district}+istanbul&t=&z=13&ie=UTF8&iwloc=&output=embed`} 
+                  src={`https://maps.google.com/maps?q=${branch ? encodeURIComponent(branch.name) : `${district}+istanbul+ilaclama`}&t=&z=14&ie=UTF8&iwloc=&output=embed`} 
                   width="100%" 
                   height="100%" 
                   style={{ border: 0 }} 
