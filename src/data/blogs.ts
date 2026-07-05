@@ -1,107 +1,135 @@
-const generateCorporateContent = (content: string, title: string, district: string = 'İstanbul') => {
-  const intro = content + "\n\n";
-  
-  const bolum1 = `${title} kapsamında, TCK İlaçlama Laboratuvarları olarak ${district} bölgesinde uzun yıllara dayanan tecrübemizle profesyonel haşere kontrol hizmetleri sunmaktayız. Eski binalar, gider boruları ve tesisat boşlukları sebebiyle yaşam alanlarınıza sızan fare, hamam böceği ve diğer zararlılar basit market spreyleriyle kalıcı olarak yok edilemez. Duvar aralarında veya parke altlarında üreyen bu böcekleri kalıcı olarak bitirmek için sorunun kaynağına inen köklü çözümler üretiyoruz.\n\n`;
-  
-  const bolum2 = `Kullandığımız ilaçlar T.C. Sağlık Bakanlığı ve Dünya Sağlık Örgütü onaylı 'Biyosidal' ürünlerdir. Bu ürünler insan ve evcil hayvan sağlığına zarar vermezken, sadece hedef böcekleri ve kemirgenleri felç eder. Evinize veya iş yerinize uyguladığımız özel jel ilaçları yiyen böcekler, yuvalarına döndüklerinde diğer böcekleri de zincirleme bir şekilde (domino etkisiyle) yok eder. Böylece tek bir işlemle tüm yuvayı tamamen kurutuyoruz. <a href='https://wa.me/905300000000?text=Merhaba,%20ila%C3%A7lama%20hizmetleriniz%20hakk%C4%B1nda%20detayl%C4%B1%20bilgi%20ve%20fiyat%20almak%20istiyorum' target='_blank' rel='noopener noreferrer' class='text-brand underline'>WhatsApp hattımız üzerinden hemen fiyat ve detaylı bilgi alabilirsiniz.</a>\n\n`;
+import React from 'react';
 
-  const bolum3 = `Fiyatlandırma konusunda tamamen şeffaf çalışıyoruz. Piyasada merdiven altı, ucuz tarım ilaçlarıyla işlem yapan amatör kişilerin aksine, biz sadece Bayer ve BASF gibi dünyanın en iyi markalarının garantili ilaçlarını kullanıyoruz. Sağlıktan tasarruf olmaz; kullanılan kalitesiz ilaçlar sadece böcekleri öldürmemekle kalmaz, sağlığınızı da ciddi şekilde riske atar. Bir kez profesyonel ilaçlama yaptırdığınızda, eviniz veya dükkanınız aylar boyunca haşerelerden tamamen korunur.\n\n`;
-
-  const bolum4 = `Sadece evler için değil; fabrika, depo, restoran, okul ve kreş gibi hassas işletmeler için de düzenli ilaçlama ve kemirgen istasyonu (fare kapanı) kontrol hizmeti sunuyoruz. Özellikle gıda işletmelerinde Tarım Bakanlığı denetimlerinden sorunsuz geçmeniz için gerekli tüm raporlamaları ve evrakları eksiksiz sağlıyoruz. İşletmenizin itibarını korumak ve müşterilerinize hijyenik bir ortam sunmak bizim görevimizdir. <a href='/hizmetler' class='text-brand underline'>Tüm hizmet detaylarımızı buradan inceleyebilirsiniz.</a>\n\n`;
-  
-  const bolum5 = `${district} bölgesinin iklimi ve yapıları haşere üremesine oldukça müsaittir. Havalar ısındığında gizlenen yumurtalar çatlar ve bir anda böcek istilasıyla karşılaşabilirsiniz. Bu yüzden böcekleri hiç görmeden, bahar aylarında önleyici ilaçlama yaptırmak en kesin çözümdür. 7/24 hizmet veren uzman kadromuzla, evinizde veya iş yerinizde en kısa sürede garantili ve kokusuz ilaçlama işlemlerini tamamlıyoruz. Keşif ve randevu için iletişim numaralarımızdan bize her zaman ulaşabilirsiniz.`;
-
-  return intro + bolum1 + bolum2 + bolum3 + bolum4 + bolum5;
+const slugify = (text: string) => {
+  return text.toLowerCase()
+    .replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's')
+    .replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')
+    .replace(/[^a-z0-9]/g, '-')
+    .replace(/-+/g, '-')
+    .replace(/^-|-$/g, '');
 };
 
-const generateTags = (title: string, district: string = 'İstanbul') => {
-  const baseTags = ['Garantili İlaçlama', 'Profesyonel İlaçlama', 'Kesin Çözüm', 'Böcek İlaçlama', 'Fare İlaçlama'];
-  return [...baseTags, district + ' İlaçlama Hizmeti', title.split(' ')[0] + ' İlaçlama'];
+const imageList = [
+  '/images/blog_spray.png',
+  '/images/blog_insect.png',
+  '/images/kadikoy-bocek-ilaclama-tck-ilaclama.png',
+  '/images/sisli-fare-ilaclama-tck-ilaclama.png',
+  '/images/besiktas-ev-ilaclama-tck-ilaclama.png'
+];
+
+const getImageForPest = (pest: string, index: number) => {
+  return imageList[index % imageList.length];
 };
+
+const districts = [
+  'Kadıköy', 'Şişli', 'Beşiktaş', 'Bakırköy', 'Pendik', 
+  'Ümraniye', 'Sarıyer', 'Beylikdüzü', 'Maltepe', 'Tuzla',
+  'Kartal', 'Zeytinburnu', 'Ataşehir', 'Üsküdar', 'Beykoz',
+  'Esenyurt', 'Avcılar', 'Fatih', 'Başakşehir', 'Eyüpsultan'
+];
+
+const pests = [
+  { name: 'Fare', desc: 'Kemirgen', type: 'kemirgen' },
+  { name: 'Hamam Böceği', desc: 'Blattodea', type: 'bocek' },
+  { name: 'Pire', desc: 'Dış Parazit', type: 'parazit' },
+  { name: 'Kene', desc: 'Dış Parazit', type: 'parazit' },
+  { name: 'Böcek', desc: 'Genel Haşere', type: 'bocek' }
+];
+
+const generateLSIKeywords = (district: string, pest: string) => {
+  return [
+    `${district} garantili ilaçlama`,
+    `${district} ${pest.toLowerCase()} ilaçlama firmaları`,
+    `${district} ilaçlama fiyatları`,
+    `sağlık bakanlığı onaylı ${pest.toLowerCase()} ilacı`,
+    `${pest.toLowerCase()} kesin çözüm`,
+    `biyosidal ürün`,
+    `kokusuz ilaçlama`
+  ].join(', ');
+};
+
+const generateCorporateContent = (district: string, pest: string) => {
+  return `
+    <article class="professional-blog-content">
+      <p class="lead" style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 2rem;">
+        TCK İlaçlama Laboratuvarları olarak <strong>${district}</strong> bölgesinde karşılaştığınız <strong>${pest}</strong> problemlerine karşı kalıcı, garantili ve Sağlık Bakanlığı onaylı biyosidal çözümler sunuyoruz. 
+      </p>
+
+      <h2 style="color: #ffffff; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+        ${district} ${pest} İstilasının Nedenleri ve Riskleri
+      </h2>
+      <p style="margin-bottom: 1.5rem;">
+        İstanbul'un en yoğun yaşam alanlarından biri olan ${district} bölgesinde, altyapı eskimesi, iklimsel değişiklikler ve yoğun insan popülasyonu <strong>${pest}</strong> üremesi için ideal koşullar yaratır. 
+        Geleneksel market spreyleri veya merdiven altı tarım ilaçları, sadece gözle gördüğünüz ${pest} popülasyonunu etkiler, ancak yuvalarında üremeye devam eden koloniyi durduramaz.
+      </p>
+      <p style="margin-bottom: 1.5rem;">
+        Özellikle gıda işletmelerinde, plazalarda ve evlerde ${pest} sorunu hem maddi hem de ciddi halk sağlığı riskleri (enfeksiyon, virüs taşıma) barındırmaktadır. 
+        Bu sebeple soruna yüzeysel değil, kökten müdahale eden mühendislik tabanlı Entegre Zararlı Yönetimi (IPM) uygulamaktayız.
+      </p>
+
+      <div style="background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 1.5rem; margin: 2rem 0; border-radius: 0 0.5rem 0.5rem 0;">
+        <h3 style="color: #10b981; margin-top: 0; margin-bottom: 1rem; font-size: 1.4rem;">Garantili ve Kokusuz Biyosidal Teknoloji</h3>
+        <p style="margin-bottom: 1rem;">
+          TCK İlaçlama olarak, uyguladığımız protokollerde sadece <strong>T.C. Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO)</strong> onaylı, insan ve çevre sağlığına zarar vermeyen biyosidal ürünler kullanmaktayız. 
+        </p>
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li style="margin-bottom: 0.5rem;">✓ Kokusuzdur ve leke bırakmaz.</li>
+          <li style="margin-bottom: 0.5rem;">✓ Alanı terk etmenize gerek kalmaz.</li>
+          <li style="margin-bottom: 0.5rem;">✓ Evcil hayvan dostudur (Pet-friendly).</li>
+          <li style="margin-bottom: 0;">✓ Kapsül teknolojisi ile aylarca koruma sağlar.</li>
+        </ul>
+      </div>
+
+      <h2 style="color: #ffffff; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+        ${district} Bölgesi ${pest} İlaçlama Fiyatları
+      </h2>
+      <p style="margin-bottom: 1.5rem;">
+        Maliyet analizi yapılırken alanın m² büyüklüğü, popülasyonun direnç seviyesi ve kullanılacak kimyasal/biyolojik ajanların türü dikkate alınır. TCK İlaçlama olarak, en ucuzu değil, kalıcı ve garantili olan en doğru çözümü sunuyoruz. 
+        Sağlıktan ve hijyenden tasarruf olmaz; kalitesiz ilaçlar yalnızca paranızı israf etmekle kalmaz, mekanınızı da zehirler.
+      </p>
+
+      <h2 style="color: #ffffff; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
+        Sıkça Sorulan Sorular (S.S.S.)
+      </h2>
+      
+      <div style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.05);">
+        <h4 style="color: #ffffff; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.2rem;">Soru: ${pest} ilaçlaması sonrası evde kalabilir miyim?</h4>
+        <p style="margin-bottom: 0;"><strong>Cevap:</strong> Evet. Uyguladığımız özel jeller ve kokusuz sıvı bariyerler sayesinde günlük yaşantınıza veya işleyişinize kesintisiz devam edebilirsiniz.</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; background: rgba(255,255,255,0.02); padding: 1.5rem; border-radius: 0.5rem; border: 1px solid rgba(255,255,255,0.05);">
+        <h4 style="color: #ffffff; margin-top: 0; margin-bottom: 0.5rem; font-size: 1.2rem;">Soru: Çözüm garantili mi?</h4>
+        <p style="margin-bottom: 0;"><strong>Cevap:</strong> Kesinlikle. ${district} bölgesindeki tüm operasyonlarımızda tam izolasyon sağlanana kadar süreç tarafımızca garanti altındadır.</p>
+      </div>
+
+      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1);">
+        <p style="font-size: 0.85rem; color: #64748b;">
+          <strong>İlgili Terimler (LSI):</strong> ${generateLSIKeywords(district, pest)}
+        </p>
+      </div>
+    </article>
+  `;
+};
+
+const generatedBlogs = [];
+let index = 0;
+
+for (const district of districts) {
+  for (const pest of pests) {
+    generatedBlogs.push({
+      slug: `${slugify(district)}-${slugify(pest.name)}-ilaclama`,
+      title: `${district} ${pest.name} İlaçlama | Profesyonel Çözüm`,
+      excerpt: `${district} lokasyonunda ${pest.name} (${pest.desc}) problemlerine karşı garantili, kokusuz ve profesyonel haşere kontrol hizmetleri.`,
+      content: generateCorporateContent(district, pest.name),
+      image: getImageForPest(pest.name, index),
+      date: `2026-07-${(index % 28) + 1 < 10 ? '0' + ((index % 28) + 1) : (index % 28) + 1}`,
+      geo: { lat: 41.0082, lng: 28.9784, region: district },
+      tags: [district, `${pest.name} İlaçlama`, 'Garantili İlaçlama', 'Profesyonel Çözüm']
+    });
+    index++;
+  }
+}
 
 export const blogs = [
-  {
-    slug: 'kadikoy-bocek-ilaclama',
-    title: 'Kadıköy Bölgesi Profesyonel Böcek İlaçlama Çözümleri',
-    excerpt: "Kadıköy'ün eski binalarında ve hareketli sokaklarında sıkça karşılaşılan hamam böceği ve fare sorunları için garantili ve kesin çözümler sunuyoruz.",
-    content: generateCorporateContent(
-      "Kadıköy, Moda ve Fenerbahçe gibi bölgelerde eski altyapılar ve restoran yoğunluğu, lağım fareleri ve hamam böcekleri için uygun üreme alanları oluşturmaktadır. TCK İlaçlama olarak Kadıköy'deki kafe, restoran ve evlerde günlük hayatı aksatmadan kokusuz jel ve sıvı uygulamalarımızla böcek sorununu kökünden çözüyoruz. İşletmelerin kapanış saatlerinde yaptığımız operasyonlarla sabah tamamen hijyenik bir ortama uyanmanızı sağlıyoruz.",
-      'Kadıköy Böcek İlaçlama Hizmetleri',
-      'Kadıköy'
-    ),
-    image: '/images/kadikoy-bocek-ilaclama-tck-ilaclama.png',
-    date: '2026-06-15',
-    geo: { lat: 40.990, lng: 29.020, region: 'Kadıköy' },
-    tags: generateTags('Kadıköy Böcek İlaçlama', 'Kadıköy')
-  },
-  {
-    slug: 'sisli-fare-ilaclama',
-    title: 'Şişli ve Mecidiyeköy Fare İlaçlama Hizmeti',
-    excerpt: "Şişli ve Mecidiyeköy bölgesindeki plazalarda ve iş yerlerinde görülen fare problemlerine karşı özel istasyonlar kurarak kalıcı koruma sağlıyoruz.",
-    content: generateCorporateContent(
-      "Şişli, Mecidiyeköy ve Nişantaşı bölgesinde kalabalık sokaklar ve yoğun atıklar, lağım farelerinin binalara sızmasına neden olabilmektedir. Asansör boşluklarından ya da otoparklardan binalara giren fareleri sıradan kapanlarla yakalamak mümkün değildir. TCK İlaçlama olarak, binaların etrafına özel kemirgen istasyonları yerleştiriyor, fareleri içeri girmeden önce güvenle etkisiz hale getiriyoruz.",
-      'Şişli Fare İlaçlama',
-      'Şişli'
-    ),
-    image: '/images/sisli-fare-ilaclama-tck-ilaclama.png',
-    date: '2026-06-14',
-    geo: { lat: 41.060, lng: 28.987, region: 'Şişli' },
-    tags: generateTags('Şişli Fare İlaçlama', 'Şişli')
-  },
-  {
-    slug: 'besiktas-ev-ilaclama',
-    title: 'Beşiktaş Bireysel Konut ve Ev İlaçlama Hizmetleri',
-    excerpt: "Beşiktaş lokasyonunda karşılaşılan pire, kene ve nem kaynaklı böcek sorunlarına karşı, insan sağlığına dost ilaçlarla maksimum koruma.",
-    content: generateCorporateContent(
-      "Beşiktaş'ın eski yapılarında ve özellikle giriş katlarında pire ve gümüş böceği gibi sorunlar sıkça görülmektedir. Sokak hayvanı popülasyonunun yoğun olduğu bu bölgelerde, apartman sığınaklarından evlere sıçrayabilen pirelere karşı, uygun fiyatlı ancak birinci sınıf kalitede garantili ilaçlama hizmeti veriyoruz. Evcil hayvanlarınıza ve ailenize zarar vermeyen yöntemlerle yaşam alanlarınızı güvene alıyoruz.",
-      'Beşiktaş Ev İlaçlama',
-      'Beşiktaş'
-    ),
-    image: '/images/besiktas-ev-ilaclama-tck-ilaclama.png',
-    date: '2026-06-13',
-    geo: { lat: 41.042, lng: 29.008, region: 'Beşiktaş' },
-    tags: generateTags('Beşiktaş Ev İlaçlama', 'Beşiktaş')
-  },
-  {
-    slug: 'pendik-tuzla-fabrika-ilaclama',
-    title: 'Tuzla ve Pendik Sanayi Odaklı İlaçlama İşlemleri',
-    excerpt: 'Tuzla ve Pendik sanayi bölgesindeki fabrikalar, depolar ve konteynerler için uluslararası denetim kurallarına uygun garantili ilaçlama çözümleri.',
-    content: generateCorporateContent(
-      "Tuzla Organize Sanayi Bölgesi ve Pendik tersanelerinde gerçekleşen yüksek hacimli ihracat süreçlerinde, palet veya konteynerlere sızabilecek en ufak bir böcek bile gümrüklerde büyük sorunlar yaratabilmektedir. TCK İlaçlama olarak sanayi tipi gazlı ilaçlama (fümigasyon) sistemlerimizle depolarınızı tamamen mühürleyip tüm haşereleri etkisiz hale getiriyoruz. İhracat sertifikalarınızı eksiksiz sağlayarak iş akışınızı güvence altına alıyoruz.",
-      'Tuzla Fabrika İlaçlama',
-      'Tuzla'
-    ),
-    image: '/images/pendik-tuzla-fabrika-ilaclama-tck-ilaclama.png',
-    date: '2026-06-12',
-    geo: { lat: 40.816, lng: 29.300, region: 'Tuzla' },
-    tags: generateTags('Tuzla Fabrika İlaçlama', 'Tuzla')
-  },
-  {
-    slug: 'umraniye-hamambocek-ilaclama',
-    title: 'Ataşehir ve Ümraniye Kalorifer Böceği Müdahale Protokolü',
-    excerpt: "Ataşehir ve Ümraniye'deki yeni binalarda ve merkezi ısıtmalı bloklarda havalandırma boşluklarından yayılan kalorifer böceklerini kesin olarak durduruyoruz.",
-    content: generateCorporateContent(
-      "Ataşehir ve Ümraniye bölgesindeki yeni nesil çok katlı sitelerde, merkezi ısıtma boruları ve havalandırma boşlukları kalorifer böceklerinin daireler arasında rahatça dolaşmasını sağlamaktadır. Komşunuzdan evinize sızabilecek bu böceklere karşı, boru etraflarına ve geçiş noktalarına kokusuz, görünmez bir ilaç bariyeri uyguluyoruz. Komşudan gelen böcek evinize adım attığı an etkisiz hale geliyor ve eviniz %100 güvende kalıyor.",
-      'Ümraniye Kalorifer Böceği İlaçlama',
-      'Ümraniye'
-    ),
-    image: '/images/umraniye-hamambocek-ilaclama-tck-ilaclama.png',
-    date: '2026-06-11',
-    geo: { lat: 40.985, lng: 29.127, region: 'Ümraniye' },
-    tags: generateTags('Ümraniye Kalorifer Böceği', 'Ümraniye')
-  },
-  {
-    slug: 'ilaclama-fiyatlari-nasil-belirlenir',
-    title: 'Profesyonel İlaçlama Fiyatları Nasıl Belirlenir?',
-    excerpt: 'İlaçlama fiyatları hangi kriterlere göre değişir? Kaliteli ilaçlama ile merdiven altı işlemler arasındaki farklar nelerdir?',
-    content: generateCorporateContent(
-      "İlaçlama fiyatları; alanın büyüklüğüne, haşerenin türüne ve kullanılacak olan profesyonel ilacın markasına göre değişiklik gösterir. Piyasada çok düşük fiyatlarla hizmet veren firmalar genellikle kalitesiz ve tarım ilacı bazlı ürünler kullanır. Bu ürünler hem böcekleri kalıcı olarak bitirmez hem de solunduğunda ciddi sağlık sorunlarına yol açar. TCK İlaçlama olarak, Dünya Sağlık Örgütü onaylı birinci sınıf ürünleri kullanarak sağlığınızı tehlikeye atmadan, kesin ve garantili çözümler sunuyoruz.",
-      'İlaçlama Fiyatları',
-      'İstanbul'
-    ),
-    image: '/images/blog_insect.png',
-    date: '2026-06-10',
-    geo: { lat: 41.0082, lng: 28.9784, region: 'İstanbul' },
-    tags: generateTags('İlaçlama Fiyatları')
-  }
+  ...generatedBlogs
 ];
