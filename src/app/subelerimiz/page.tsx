@@ -18,10 +18,10 @@ export default function BranchesPage() {
             <span>İstanbul'un Her Yerindeyiz</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-black text-white mb-6">
-            TCK İlaçlama <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-300">Operasyon Üsleri</span>
+            TCK İlaçlama <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-300">Şubeleri ve Hizmet Noktaları</span>
           </h1>
           <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            İstanbul'un 28 farklı noktasında bulunan operasyon merkezlerimizle, çağrınıza en fazla 45 dakika içerisinde yanıt veriyor ve acil müdahale ekibimizi yönlendiriyoruz.
+            İstanbul'un 28 farklı bölgesinde bulunan aktif şubelerimizle, çağrınıza en kısa sürede yanıt veriyor ve size en yakın ekibimizi yönlendiriyoruz.
           </p>
         </div>
 

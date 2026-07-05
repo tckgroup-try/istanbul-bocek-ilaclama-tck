@@ -144,7 +144,7 @@ export function BranchesHub({ branches }: BranchesHubProps) {
                   </div>
 
                   <p className="text-slate-400 text-xs leading-relaxed mb-4">
-                    {branch.name} acil müdahale ve periyodik biyosidal dezenfeksiyon merkezi.
+                    {branch.name} profesyonel böcek ve haşere ilaçlama servisi.
                   </p>
 
                   <div className="flex gap-2">
@@ -188,8 +188,8 @@ export function BranchesHub({ branches }: BranchesHubProps) {
             <div className="flex items-center gap-2.5">
               <Compass className="w-5 h-5 text-brand animate-spin-slow" />
               <div>
-                <h4 className="text-white font-bold text-sm leading-none">Canlı Şube İzleme</h4>
-                <span className="text-[10px] text-slate-500 font-medium">Operasyon Yönetim Paneli</span>
+                <h4 className="text-white font-bold text-sm leading-none">Hizmet Noktası Detayları</h4>
+                <span className="text-[10px] text-slate-500 font-medium">Aktif Şube Haritası</span>
               </div>
             </div>
             <div className="flex items-center gap-2">
@@ -211,7 +211,7 @@ export function BranchesHub({ branches }: BranchesHubProps) {
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title={`${selectedBranch ? selectedBranch.district : 'İstanbul'} Operasyon Merkezi Haritası`}
+              title={`${selectedBranch ? selectedBranch.district : 'İstanbul'} Şube Haritası`}
             />
           </div>
 
@@ -225,7 +225,7 @@ export function BranchesHub({ branches }: BranchesHubProps) {
                 {selectedBranch ? selectedBranch.name : 'TCK İlaçlama İstanbul'}
               </h3>
               <p className="text-sm text-slate-400 mt-2">
-                {selectedBranch ? selectedBranch.district : 'Tüm'} bölgesi ve çevresinde lisanslı mühendis ekiplerle 7/24 kesintisiz operasyon.
+                {selectedBranch ? selectedBranch.district : 'Tüm'} bölgesi ve çevresinde lisanslı ekiplerle 7/24 kesintisiz hizmet.
               </p>
             </div>
 
