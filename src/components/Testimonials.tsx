@@ -85,6 +85,28 @@ const reviews: Review[] = [
     icon: <Utensils className="w-6 h-6 text-teal-400" />,
     rating: 5,
     tags: ["BRCGS & HACCP", "Dijital İstasyon Takibi"]
+  },
+  {
+    id: 7,
+    name: "Nuri Usta",
+    company: "Tarihi Bizim Esnaf Lokantası",
+    role: "Sahibi & Başaşçı",
+    category: "food",
+    comment: "Müşterilerimizin göreceği bir yere tek bir böcek dahi düşmesini göze alamayız. TCK İlaçlama'nın kokusuz ve jel uygulaması sayesinde işimize hiç ara vermeden düzenli koruma alıyoruz. Esnaf dostu çözümleri harika.",
+    icon: <Utensils className="w-6 h-6 text-pink-400" />,
+    rating: 5,
+    tags: ["Esnaf Dostu Fiyat", "Kokusuz Jel Uygulama"]
+  },
+  {
+    id: 8,
+    name: "Mustafa Ak",
+    company: "Kamu Hizmet Binası",
+    role: "İdari İşler Müdürü",
+    category: "hospitality",
+    comment: "Yoğun insan trafiğinin olduğu kamu binalarımızda temizlik ve hijyen standartları en üst düzeyde olmalıdır. TCK İlaçlama'nın Sağlık Bakanlığı onaylı ve sertifikalı periyodik ilaçlama protokolleri sayesinde memurlarımız ve vatandaşlarımız güvenle hizmet alıyor.",
+    icon: <Building2 className="w-6 h-6 text-yellow-400" />,
+    rating: 5,
+    tags: ["Resmi Kurum Onaylı", "Sertifikalı Raporlama"]
   }
 ];
 
