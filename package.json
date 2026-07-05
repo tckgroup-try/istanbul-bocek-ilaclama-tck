@@ -25,6 +25,7 @@
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "prisma": "^6.4.1",
+    "@tailwindcss/typography": "^0.5.15",
     "tailwindcss": "^4",
     "typescript": "^5"
   }
