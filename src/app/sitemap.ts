@@ -1,4 +1,9 @@
 import { MetadataRoute } from 'next';
+import { blogs } from '@/data/blogs';
+
+const DISTRICTS = ['sisli', 'kadikoy', 'besiktas', 'bakirkoy', 'pendik', 'maltepe'];
+const PLACES = ['fabrika', 'ofis', 'apartman', 'restoran', 'villa'];
+const PESTS = ['fare', 'bocek', 'pire', 'hamam-bocegi', 'akrep'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.tckilaclama.com';
