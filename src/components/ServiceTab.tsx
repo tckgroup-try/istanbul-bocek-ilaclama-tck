@@ -80,7 +80,7 @@ export function ServiceTab() {
                 className="absolute inset-0"
               >
                 <Image 
-                  src={activeTab === 'b2b' ? '/images/b2b.png' : '/images/b2c.png'} 
+                  src={activeTab === 'b2b' ? '/images/tck_fabrika_ekip.png' : '/images/tck_bocek_mutfak.png'} 
                   alt={activeTab === 'b2b' ? 'Kurumsal İlaçlama' : 'Bireysel İlaçlama'}
                   fill
                   sizes="(max-width: 1024px) 100vw, 40vw"

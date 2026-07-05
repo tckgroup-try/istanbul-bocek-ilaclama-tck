@@ -10,11 +10,11 @@ const slugify = (text: string) => {
 };
 
 const imageList = [
-  '/images/blog_spray.png',
-  '/images/blog_insect.png',
-  '/images/kadikoy-bocek-ilaclama-tck-ilaclama.png',
-  '/images/sisli-fare-ilaclama-tck-ilaclama.png',
-  '/images/besiktas-ev-ilaclama-tck-ilaclama.png'
+  '/images/tck_fare_uzman.png',
+  '/images/tck_fabrika_ekip.png',
+  '/images/tck_bocek_mutfak.png',
+  '/images/tck_arac_filo.png',
+  '/images/tck_expert.png'
 ];
 
 const getImageForPest = (pest: string, index: number) => {

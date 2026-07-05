@@ -39,7 +39,7 @@ export default function Hakkimizda() {
             <div className="w-full md:w-1/2">
               <div className="relative h-[500px] rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
                 <Image 
-                  src="/images/blog_spray.png" 
+                  src="/images/tck_fabrika_ekip.png" 
                   alt="TCK İlaçlama Teknolojisi" 
                   fill 
                   className="object-cover"
