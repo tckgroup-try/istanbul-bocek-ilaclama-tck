@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { FloatingWhatsApp } from "@/components/FloatingWhatsApp";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -43,18 +44,19 @@ export default function RootLayout({
   return (
     <html lang="tr" className="dark">
       <head>
-        {/* Google Analytics (GA4) Placeholder */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYD22WWKC8"></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-GYD22WWKC8');
-            `,
-          }}
+        {/* Google Analytics (GA4) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-GYD22WWKC8"
+          strategy="afterInteractive"
         />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-GYD22WWKC8');
+          `}
+        </Script>
       </head>
       <body className={`${inter.className} bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased selection:bg-brand/30 selection:text-white`}>
         <Navbar />
