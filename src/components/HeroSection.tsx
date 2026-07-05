@@ -63,6 +63,7 @@ export function HeroSection() {
             src="/images/hero.png" 
             alt="İleri Düzey Koruma Kalkanı Laboratuvarı" 
             fill 
+            sizes="(max-width: 768px) 100vw, 50vw"
             className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
             priority
           />

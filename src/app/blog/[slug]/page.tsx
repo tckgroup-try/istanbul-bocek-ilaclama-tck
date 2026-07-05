@@ -75,6 +75,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
               src={blog.image} 
               alt={blog.title} 
               fill 
+              sizes="(max-width: 1024px) 100vw, 896px"
               className="object-cover"
               priority
             />

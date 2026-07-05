@@ -83,6 +83,7 @@ export function ServiceTab() {
                   src={activeTab === 'b2b' ? '/images/b2b.png' : '/images/b2c.png'} 
                   alt={activeTab === 'b2b' ? 'Kurumsal İlaçlama' : 'Bireysel İlaçlama'}
                   fill
+                  sizes="(max-width: 1024px) 100vw, 40vw"
                   className="object-cover opacity-80"
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-zinc-900/80 to-transparent" />
