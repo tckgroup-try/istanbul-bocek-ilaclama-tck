@@ -50,11 +50,11 @@ export function Navbar() {
           <a href="tel:+905300000000" className="text-sm font-medium text-brand hover:text-blue-400 transition-colors">
             0530 000 00 00
           </a>
-          <Link href="/teklif-al">
+          <a href="https://wa.me/905300000000?text=Merhaba,%20acil%20ila%C3%A7lama%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
             <RoseButton variant="primary" className="py-2 px-5 text-sm">
               Acil Teklif Al
             </RoseButton>
-          </Link>
+          </a>
         </nav>
 
         {/* Mobile Toggle */}
@@ -73,9 +73,9 @@ export function Navbar() {
           <Link href="/hasereler" className="text-slate-300 font-medium p-3 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Haşere Türleri</Link>
           <Link href="/kurumsal" className="text-slate-300 font-medium p-3 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Kurumsal</Link>
           <a href="tel:+905300000000" className="text-brand font-medium p-3 hover:text-blue-400 transition-colors">0530 000 00 00</a>
-          <Link href="/teklif-al" onClick={() => setIsMobileMenuOpen(false)} className="mt-2">
+          <a href="https://wa.me/905300000000?text=Merhaba,%20acil%20ila%C3%A7lama%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="mt-2">
             <RoseButton className="w-full py-4 text-lg">Acil Teklif Al</RoseButton>
-          </Link>
+          </a>
         </div>
       )}
     </header>
