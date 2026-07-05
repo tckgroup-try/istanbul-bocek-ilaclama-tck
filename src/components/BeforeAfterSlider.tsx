@@ -48,7 +48,7 @@ export function BeforeAfterSlider() {
             {/* After Image (Always at bottom) */}
             <div className="absolute inset-0 w-full h-full">
               <Image
-                src="/images/tck_fabrika_ekip.png"
+                src="/images/after_slider.png"
                 alt="TCK İlaçlama Sonrası Steril Alan"
                 fill
                 className="object-cover"
@@ -65,12 +65,12 @@ export function BeforeAfterSlider() {
               className="absolute inset-0 w-full h-full bg-slate-900 overflow-hidden"
               style={{ clipPath: `polygon(0 0, ${sliderPosition}% 0, ${sliderPosition}% 100%, 0 100%)` }}
             >
-              {/* Using a highly darkened/desaturated generic image as the "Before" state */}
+              {/* Using the perfectly matching dirty image */}
               <Image
-                src="/images/tck_fare_uzman.png" // using a dark inspection image to represent the 'Before' state
+                src="/images/before_slider.png" 
                 alt="İlaçlama Öncesi İstila"
                 fill
-                className="object-cover sepia-[.5] hue-rotate-180 brightness-50 contrast-125"
+                className="object-cover"
                 draggable={false}
               />
               {/* Before Label */}
