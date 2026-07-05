@@ -14,10 +14,15 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const resolvedParams = await params;
   const slugParts = resolvedParams.slug.split('-');
   
-  // Basic parser for "istanbul-kadikoy-fabrika-fare-ilaclama"
-  const district = slugParts[1] ? slugParts[1].charAt(0).toUpperCase() + slugParts[1].slice(1) : 'İstanbul';
-  const place = slugParts[2] ? slugParts[2].charAt(0).toUpperCase() + slugParts[2].slice(1) : 'Alan';
-  const pest = slugParts[3] ? slugParts[3].charAt(0).toUpperCase() + slugParts[3].slice(1) : 'Haşere';
+  const hasDistrict = slugParts.length >= 5;
+  
+  const districtRaw = hasDistrict ? slugParts[1] : 'İstanbul';
+  const placeRaw = hasDistrict ? slugParts[2] : slugParts[1];
+  const pestRaw = hasDistrict ? slugParts[3] : slugParts[2];
+
+  const district = districtRaw ? districtRaw.charAt(0).toUpperCase() + districtRaw.slice(1) : 'İstanbul';
+  const place = placeRaw ? placeRaw.charAt(0).toUpperCase() + placeRaw.slice(1) : 'Alan';
+  const pest = pestRaw ? pestRaw.charAt(0).toUpperCase() + pestRaw.slice(1) : 'Haşere';
 
   const title = `${district} ${place} ${pest} İlaçlama | Garantili Çözüm`;
   const description = `${district} bölgesinde ${place} alanları için %100 garantili ${pest.toLowerCase()} ilaçlama hizmeti. Acil müdahale ve kokusuz koruma kalkanı.`;
@@ -41,12 +46,20 @@ export default async function ServiceSlugPage({ params }: { params: Promise<{ sl
   const resolvedParams = await params;
   const slugParts = resolvedParams.slug.split('-');
   
-  // Basic parser
-  const district = slugParts[1] ? slugParts[1].charAt(0).toUpperCase() + slugParts[1].slice(1) : 'İstanbul';
-  const place = slugParts[2] ? slugParts[2].charAt(0).toUpperCase() + slugParts[2].slice(1) : 'Alan';
-  const pest = slugParts[3] ? slugParts[3].charAt(0).toUpperCase() + slugParts[3].slice(1) : 'Haşere';
+  const hasDistrict = slugParts.length >= 5;
+  
+  const districtRaw = hasDistrict ? slugParts[1] : 'İstanbul';
+  const placeRaw = hasDistrict ? slugParts[2] : slugParts[1];
+  const pestRaw = hasDistrict ? slugParts[3] : slugParts[2];
 
-  const branch = tckBranches.find(b => b.district.toLowerCase() === district.toLowerCase());
+  const district = districtRaw ? districtRaw.charAt(0).toUpperCase() + districtRaw.slice(1) : 'İstanbul';
+  const place = placeRaw ? placeRaw.charAt(0).toUpperCase() + placeRaw.slice(1) : 'Alan';
+  const pest = pestRaw ? pestRaw.charAt(0).toUpperCase() + pestRaw.slice(1) : 'Haşere';
+
+  // Eğer URL'de ilçe yoksa (Ana merkez veya tüm İstanbul kastediliyorsa) ilk şubeyi veya merkez şubeyi (örn: Kadıköy) baz al.
+  const branch = hasDistrict 
+    ? tckBranches.find(b => b.district.toLowerCase() === district.toLowerCase()) 
+    : tckBranches[0]; // Merkez şube (Kadıköy)
 
   return (
     <>
