@@ -12,15 +12,22 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tckilaclama.com"),
   title: "TCK İlaçlama | Premium Haşere Kontrol Laboratuvarı",
-  description: "İstanbul merkezli, B2B ve B2C pazarında ultra-premium, steril ve kesin çözüm odaklı böcek ve haşere ilaçlama platformu. Acil müdahale ve 7/24 hizmet.",
+  description: "TCK İlaçlama: İstanbul'un lider böcek ilaçlama, haşere kontrol ve fümigasyon merkezi. Sağlık Bakanlığı onaylı, %100 kesin çözüm garantili, kokusuz, 7/24 acil müdahale. Ev, apartman, fabrika, gemi ve restoran ilaçlama hizmetleri. Hemen fiyat alın.",
   keywords: [
-    "böcek ilaçlama", "haşere kontrol", "istanbul ilaçlama", "fare ilaçlama", 
-    "pire ilaçlama", "hamam böceği ilaçlama", "fabrika ilaçlama", 
-    "kurumsal ilaçlama", "TCK ilaçlama", "apartman ilaçlama", "garantili ilaçlama"
+    // Core Head Terms
+    "böcek ilaçlama", "haşere ilaçlama", "haşere kontrol", "istanbul böcek ilaçlama", "ilaçlama şirketleri", "ilaçlama firmaları", 
+    // Specific Pests (Böcek/Haşere Türleri)
+    "fare ilaçlama", "pire ilaçlama", "hamam böceği ilaçlama", "kalorifer böceği ilaçlama", "tahtakurusu ilaçlama", "akrep ilaçlama", "kene ilaçlama", "sivrisinek ilaçlama", "gümüş böceği ilaçlama", "karınca ilaçlama", "örümcek ilaçlama", "çıyan ilaçlama",
+    // B2B & Commercial (Kurumsal ve Endüstriyel)
+    "fabrika ilaçlama", "endüstriyel ilaçlama", "fümigasyon", "gemi ilaçlama", "restoran ilaçlama", "otel ilaçlama", "lokanta ilaçlama", "depo ilaçlama", "iş yeri ilaçlama", "ofis ilaçlama", "kurumsal ilaçlama", "şantiye ilaçlama", "okul ilaçlama", "hastane ilaçlama", "BRCGS ilaçlama", "HACCP pest kontrol", "IPM entegre zararlı yönetimi",
+    // B2C & Residential (Bireysel)
+    "ev ilaçlama", "apartman ilaçlama", "daire ilaçlama", "site ilaçlama", "bahçe ilaçlama", "bina ilaçlama", "çatı ilaçlama", "bodrum ilaçlama", "kömürlük ilaçlama",
+    // Long-Tail & Intent (Arama Niyetleri)
+    "garantili böcek ilaçlama", "kokusuz böcek ilaçlama", "sağlık bakanlığı onaylı ilaçlama", "7/24 acil böcek ilaçlama", "en iyi ilaçlama şirketi", "ucuz ilaçlama fiyatları", "ilaçlama servisi", "ilaçlama uzmanı", "böcek ilaçlama fiyatları 2026", "kesin çözüm fare ilaçlama", "biyosidal ürün uygulaması"
   ],
   openGraph: {
-    title: "TCK İlaçlama | Garantili Haşere Kontrol",
-    description: "İşletmeniz ve yaşam alanlarınız için bilimsel, garantili ve ultra-premium koruma kalkanı.",
+    title: "TCK İlaçlama | Garantili Böcek ve Haşere Kontrol Merkezi",
+    description: "İstanbul genelinde 7/24 acil müdahale, kokusuz ve garantili haşere ilaçlama. Fabrika, restoran, gemi ve evleriniz için profesyonel biyosidal kalkan.",
     url: "https://www.tckilaclama.com",
     siteName: "TCK İlaçlama",
     locale: "tr_TR",
@@ -52,6 +59,66 @@ export default function RootLayout({
   return (
     <html lang="tr" className="dark">
       <head>
+        {/* Advanced SEO: Organization & LocalBusiness Schema */}
+        <Script
+          id="organization-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://www.tckilaclama.com/#organization",
+                  "name": "TCK İlaçlama",
+                  "url": "https://www.tckilaclama.com",
+                  "logo": "https://www.tckilaclama.com/images/tck_expert.png",
+                  "contactPoint": {
+                    "@type": "ContactPoint",
+                    "telephone": "+90-501-635-50-53",
+                    "contactType": "customer service",
+                    "areaServed": "TR",
+                    "availableLanguage": "Turkish"
+                  },
+                  "sameAs": [
+                    "https://www.instagram.com/tckilaclama",
+                    "https://www.facebook.com/tckilaclama"
+                  ]
+                },
+                {
+                  "@type": "LocalBusiness",
+                  "@id": "https://www.tckilaclama.com/#localbusiness",
+                  "name": "TCK İlaçlama",
+                  "image": "https://www.tckilaclama.com/images/tck_expert.png",
+                  "telephone": "+905016355053",
+                  "url": "https://www.tckilaclama.com",
+                  "priceRange": "₺₺",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "İstanbul Merkezi",
+                    "addressLocality": "İstanbul",
+                    "addressRegion": "TR",
+                    "addressCountry": "TR"
+                  },
+                  "geo": {
+                    "@type": "GeoCoordinates",
+                    "latitude": 41.0082,
+                    "longitude": 28.9784
+                  },
+                  "openingHoursSpecification": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": [
+                      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
+                    ],
+                    "opens": "00:00",
+                    "closes": "23:59"
+                  }
+                }
+              ]
+            })
+          }}
+        />
+
         {/* Google Analytics (GA4) */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GYD22WWKC8"
