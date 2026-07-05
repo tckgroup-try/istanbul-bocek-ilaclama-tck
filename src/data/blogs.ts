@@ -52,7 +52,7 @@ const generateCorporateContent = (district: string, pest: string) => {
   return `
     <article class="professional-blog-content">
       <p class="lead" style="font-size: 1.1rem; color: #94a3b8; margin-bottom: 2rem;">
-        TCK İlaçlama Laboratuvarları olarak <strong>${district}</strong> bölgesinde karşılaştığınız <strong>${pest}</strong> problemlerine karşı kalıcı, garantili ve Sağlık Bakanlığı onaylı biyosidal çözümler sunuyoruz. 
+        TCK İlaçlama olarak <strong>${district}</strong> bölgesinde karşılaştığınız <strong>${pest}</strong> problemlerine karşı kalıcı, garantili ve Sağlık Bakanlığı onaylı ilaçlama çözümleri sunuyoruz.
       </p>
 
       <h2 style="color: #ffffff; font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem;">
@@ -63,14 +63,14 @@ const generateCorporateContent = (district: string, pest: string) => {
         Geleneksel market spreyleri veya merdiven altı tarım ilaçları, sadece gözle gördüğünüz ${pest} popülasyonunu etkiler, ancak yuvalarında üremeye devam eden koloniyi durduramaz.
       </p>
       <p style="margin-bottom: 1.5rem;">
-        Özellikle gıda işletmelerinde, plazalarda ve evlerde ${pest} sorunu hem maddi hem de ciddi halk sağlığı riskleri (enfeksiyon, virüs taşıma) barındırmaktadır. 
-        Bu sebeple soruna yüzeysel değil, kökten müdahale eden mühendislik tabanlı Entegre Zararlı Yönetimi (IPM) uygulamaktayız.
+        Özellikle gıda işletmelerinde, plazalarda ve evlerde ${pest} sorunu hem maddi hem de ciddi halk sağlığı riskleri (enfeksiyon, virüs taşıma) barındırmaktadır.
+        Bu sebeple soruna yüzeysel değil, kökten müdahale eden profesyonel ve garantili ilaçlama yöntemleri uygulamaktayız.
       </p>
 
       <div style="background: rgba(16, 185, 129, 0.05); border-left: 4px solid #10b981; padding: 1.5rem; margin: 2rem 0; border-radius: 0 0.5rem 0.5rem 0;">
-        <h3 style="color: #10b981; margin-top: 0; margin-bottom: 1rem; font-size: 1.4rem;">Garantili ve Kokusuz Biyosidal Teknoloji</h3>
+        <h3 style="color: #10b981; margin-top: 0; margin-bottom: 1rem; font-size: 1.4rem;">Garantili ve Kokusuz İlaçlama Uygulamaları</h3>
         <p style="margin-bottom: 1rem;">
-          TCK İlaçlama olarak, uyguladığımız protokollerde sadece <strong>T.C. Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO)</strong> onaylı, insan ve çevre sağlığına zarar vermeyen biyosidal ürünler kullanmaktayız. 
+          TCK İlaçlama olarak, uyguladığımız işlemlerde sadece <strong>T.C. Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO)</strong> onaylı, insan ve çevre sağlığına zarar vermeyen ruhsatlı ilaçlar kullanmaktayız.
         </p>
         <ul style="list-style-type: none; padding-left: 0;">
           <li style="margin-bottom: 0.5rem;">✓ Kokusuzdur ve leke bırakmaz.</li>

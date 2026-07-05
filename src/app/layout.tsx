@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.tckilaclama.com"),
-  title: "TCK İlaçlama | Premium Haşere Kontrol Laboratuvarı",
+  title: "TCK İlaçlama | İstanbul Böcek ve Haşere İlaçlama Hizmeti",
   description: "TCK İlaçlama: İstanbul'un lider böcek ilaçlama, haşere kontrol ve fümigasyon merkezi. Sağlık Bakanlığı onaylı, %100 kesin çözüm garantili, kokusuz, 7/24 acil müdahale. Ev, apartman, fabrika, gemi ve restoran ilaçlama hizmetleri. Hemen fiyat alın.",
   keywords: [
     // Core Head Terms
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: "TCK İlaçlama | Garantili Böcek ve Haşere Kontrol Merkezi",
-    description: "İstanbul genelinde 7/24 acil müdahale, kokusuz ve garantili haşere ilaçlama. Fabrika, restoran, gemi ve evleriniz için profesyonel biyosidal kalkan.",
+    description: "İstanbul genelinde 7/24 acil müdahale, kokusuz ve garantili haşere ilaçlama. Fabrika, restoran, gemi ve evleriniz için profesyonel ilaçlama çözümleri.",
     url: "https://www.tckilaclama.com",
     siteName: "TCK İlaçlama",
     locale: "tr_TR",

@@ -27,7 +27,7 @@ export default function Hakkimizda() {
             </span>
           </h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto leading-relaxed">
-            TCK İlaçlama, arkasındaki güçlü TCK Group altyapısıyla İstanbul'un her noktasına 45 dakikada ulaşan, endüstriyel disiplinle çalışan profesyonel bir biyosidal operasyon merkezidir. Sıradan ilaçlama şirketlerinin aksine, deneme yanılma yapmaz, %100 kesin ve kalıcı IPM (Entegre Zararlı Yönetimi) protokolleri uygularız.
+            TCK İlaçlama, arkasındaki güçlü TCK Group altyapısıyla İstanbul'un her noktasına en kısa sürede ulaşan, yüksek sorumluluk bilinciyle çalışan profesyonel bir ilaçlama şirketidir. Sıradan ilaçlama şirketlerinin aksine, deneme yanılma yapmaz, %100 kesin ve kalıcı haşere kontrol yöntemleri uygularız.
           </p>
         </div>
       </section>

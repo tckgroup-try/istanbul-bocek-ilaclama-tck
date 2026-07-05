@@ -19,7 +19,7 @@ const reviews = [
     name: "Selin Karaca",
     company: "Bosphorus Premium Hotel",
     role: "Genel Müdür",
-    comment: "Otel misafirlerimizin konforu bizim için her şeydir. TCK İlaçlama ekipleri gece yarısı sivil araçlarla gelip tüm operasyonu sessizce hallediyor. Gerçek bir premium laboratuvar hizmeti alıyoruz.",
+    comment: "Otel misafirlerimizin konforu bizim için her şeydir. TCK İlaçlama ekipleri gece yarısı sivil araçlarla gelip tüm süreci sessizce hallediyor. Gerçek anlamda profesyonel ve kurumsal bir ilaçlama hizmeti alıyoruz.",
     icon: <Building2 className="w-6 h-6 text-blue-400" />,
     rating: 5,
   },

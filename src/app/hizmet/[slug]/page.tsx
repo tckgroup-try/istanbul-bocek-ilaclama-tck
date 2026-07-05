@@ -133,8 +133,8 @@ export default async function ServiceSlugPage({ params }: { params: Promise<{ sl
           <div className="glass-panel rounded-3xl p-4 md:p-8 border border-white/5 shadow-2xl">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h3 className="text-2xl font-bold text-white mb-4">{district} Bölgesi Operasyon Merkezi</h3>
-                <p className="text-slate-400 mb-6">Müdahale araçlarımız ve uzman biyosidal ekiplerimiz {district} lokasyonunda 7/24 hazır beklemektedir. Acil fümigasyon veya standart ilaçlama için hemen yol tarifi alabilirsiniz.</p>
+                <h3 className="text-2xl font-bold text-white mb-4">{district} Bölgesi Hizmet Noktası</h3>
+                <p className="text-slate-400 mb-6">Gezici ekiplerimiz ve deneyimli uzmanlarımız {district} genelinde 7/24 kesintisiz hizmet vermektedir. Hızlı ve güvenli haşere ilaçlama uygulamaları için yol tarifi alabilir veya doğrudan bizi arayabilirsiniz.</p>
                 <a href={branch ? branch.url : `https://www.google.com/maps/dir/?api=1&destination=${district}+istanbul+ilaclama`} target="_blank" rel="noopener noreferrer">
                   <button className="flex items-center gap-3 bg-brand hover:bg-brand-hover text-white px-6 py-3 rounded-xl transition-colors font-semibold shadow-lg shadow-brand/20">
                     <Navigation className="w-5 h-5" />

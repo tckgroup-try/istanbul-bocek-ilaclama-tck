@@ -4,8 +4,8 @@ import Image from 'next/image';
 import { GlassCard } from '@/components/ui/GlassCard';
 
 export const metadata = {
-  title: 'Blog | TCK İlaçlama Laboratuvarları',
-  description: 'İstanbul haşere kontrol ve biyosidal ilaçlama hizmetleri hakkında profesyonel makaleler, akademik rehberler ve çözüm analizleri.',
+  title: 'Uzman Rehberi ve Blog | TCK İlaçlama',
+  description: 'İstanbul böcek ve haşere ilaçlama uygulamaları, rehberler ve zararlılarla mücadele yöntemleri hakkında profesyonel makaleler.',
 };
 
 export default async function BlogPage({ searchParams }: { searchParams: { tag?: string } }) {
