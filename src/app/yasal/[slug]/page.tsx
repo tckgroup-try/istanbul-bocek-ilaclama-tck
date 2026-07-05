@@ -12,6 +12,15 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${page.title} | TCK İlaçlama`,
     description: 'TCK İlaçlama yasal bilgilendirme, KVKK, gizlilik politikası ve ISO sertifikaları detayları.',
+    alternates: {
+      canonical: `https://www.tckilaclama.com/yasal/${slug}`
+    },
+    openGraph: {
+      title: page.title,
+      description: 'TCK İlaçlama kurumsal ve yasal politikaları.',
+      url: `https://www.tckilaclama.com/yasal/${slug}`,
+      type: "website",
+    }
   };
 }
 

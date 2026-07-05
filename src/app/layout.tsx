@@ -9,6 +9,7 @@ import Script from "next/script";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.tckilaclama.com"),
   title: "TCK İlaçlama | Premium Haşere Kontrol Laboratuvarı",
   description: "İstanbul merkezli, B2B ve B2C pazarında ultra-premium, steril ve kesin çözüm odaklı böcek ve haşere ilaçlama platformu. Acil müdahale ve 7/24 hizmet.",
   keywords: [
@@ -23,7 +24,12 @@ export const metadata: Metadata = {
     siteName: "TCK İlaçlama",
     locale: "tr_TR",
     type: "website",
+    images: [{ url: "/images/tck_expert.png", width: 1200, height: 630, alt: "TCK İlaçlama Uzmanı" }]
   },
+  alternates: {
+    canonical: "https://www.tckilaclama.com",
+  },
+  authors: [{ name: "TCK Group" }],
   robots: {
     index: true,
     follow: true,
@@ -82,7 +88,7 @@ export default function RootLayout({
                   <li><a href="/hakkimizda" className="text-slate-500 hover:text-brand transition-colors">Hakkımızda</a></li>
                   <li><a href="/hizmetler" className="text-slate-500 hover:text-brand transition-colors">Hizmetlerimiz</a></li>
                   <li><a href="/blog" className="text-slate-500 hover:text-brand transition-colors">Ustaların Notları (Blog)</a></li>
-                  <li><a href="https://wa.me/905300000000?text=Merhaba,%20ila%C3%A7lama%20hizmetleri%20i%C3%A7in%20fiyat%20hesaplatmak%20istiyorum." target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand transition-colors">Fiyat Hesapla / Teklif Al</a></li>
+                  <li><a href="https://wa.me/905016355053?text=Merhaba,%20ila%C3%A7lama%20hizmetleri%20i%C3%A7in%20fiyat%20hesaplatmak%20istiyorum." target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand transition-colors">Fiyat Hesapla / Teklif Al</a></li>
                 </ul>
               </div>
               <div>
@@ -111,7 +117,7 @@ export default function RootLayout({
               "name": "TCK İlaçlama",
               "image": "https://www.tckilaclama.com/logo.png",
               "url": "https://www.tckilaclama.com",
-              "telephone": "+905300000000",
+              "telephone": "+905016355053",
               "address": {
                 "@type": "PostalAddress",
                 "streetAddress": "Merkez Mah. İlaçlama Sok. No:1",

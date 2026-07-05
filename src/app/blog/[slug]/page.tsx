@@ -12,12 +12,17 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   if (!blog) return { title: 'Bulunamadı' };
 
   return {
-    title: `${blog.title} | TCK İlaçlama`,
+    title: `${blog.title} | TCK İlaçlama Blog`,
     description: blog.excerpt,
-    keywords: blog.tags || [],
+    keywords: blog.tags ? blog.tags.join(', ') : '',
+    alternates: {
+      canonical: `https://www.tckilaclama.com/blog/${slug}`
+    },
     openGraph: {
       title: blog.title,
       description: blog.excerpt,
+      url: `https://www.tckilaclama.com/blog/${slug}`,
+      type: "article",
       images: [blog.image]
     }
   };
