@@ -23,7 +23,7 @@ export default async function BlogPage({ searchParams }: { searchParams: { tag?:
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Operasyonel Çözüm Rehberi</h1>
           <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             {tagFilter 
-              ? \`"\${tagFilter}" etiketi için bulunan sonuçlar.\` 
+              ? `"${tagFilter}" etiketi için bulunan sonuçlar.` 
               : "Haşere kontrolü ve entegre zararlı yönetimi konularında profesyonel mühendislik ekibimiz tarafından derlenen güncel analizler."}
           </p>
           {tagFilter && (
@@ -42,7 +42,7 @@ export default async function BlogPage({ searchParams }: { searchParams: { tag?:
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredBlogs.map((blog) => (
-              <Link key={blog.slug} href={\`/blog/\${blog.slug}\`} className="block h-full">
+              <Link key={blog.slug} href={`/blog/${blog.slug}`} className="block h-full">
                 <GlassCard hoverEffect className="h-full flex flex-col p-0 overflow-hidden border-white/5 hover:border-brand/30">
                   <div className="relative h-48 w-full">
                     <Image 
