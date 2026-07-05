@@ -26,7 +26,7 @@ export function HeroSection() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand/30 text-sm font-semibold text-brand shadow-[0_0_15px_rgba(16,185,129,0.2)]">
             <ShieldCheck className="w-4 h-4" />
-            <span>Sağlık Bakanlığı Onaylı Biyosidal Kalkan</span>
+            <span>Sağlık Bakanlığı Onaylı Böcek ve Haşere İlaçlama</span>
           </div>
           
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-white leading-[1.1]">
@@ -37,7 +37,7 @@ export function HeroSection() {
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl text-slate-300 max-w-xl leading-relaxed font-medium">
-            Sıradan ilaçlamayı unutun. Eviniz ve işletmeniz için geliştirilmiş 0 toleranslı <span className="text-white font-bold">Entegre Zararlı Yönetimi (IPM)</span>. 45 dakikada acil müdahale, kokusuz biyosidal formül ve %100 kesin çözüm garantisi.
+            Sıradan ilaçlamayı unutun. Eviniz ve işletmeniz için geliştirilmiş 0 toleranslı profesyonel haşere kontrolü. 45 dakikada acil müdahale, kokusuz, lekesiz ve insan sağlığına zararsız formüllerle %100 kesin çözüm garantisi.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 pt-4 w-full">

@@ -25,7 +25,7 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-bold text-white mb-3">%100 Kesin Çözüm Garantisi</h3>
               <p className="text-slate-400">
-                Uyguladığımız tüm biyosidal protokoller sıfır toleranslıdır. İstila sorununa kalıcı olarak veda edin, zamanınız ve paranız boşa gitmesin.
+                Uyguladığımız tüm böcek ve haşere ilaçlama protokolleri sıfır toleranslıdır. İstila sorununa kalıcı olarak veda edin, zamanınız ve paranız boşa gitmesin.
               </p>
             </GlassCard>
             
@@ -33,9 +33,9 @@ export default function Home() {
               <div className="mx-auto w-16 h-16 rounded-full bg-brand/10 flex items-center justify-center mb-6">
                 <Target className="w-8 h-8 text-brand" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">Taktiksel Biyosidal Müdahale</h3>
+              <h3 className="text-xl font-bold text-white mb-3">Taktiksel Haşere Müdahalesi</h3>
               <p className="text-slate-400">
-                Gelişmiş taksonomik analiz ile haşerenin biyolojisine özel, bağışıklık direnci geliştiremeyen en etkili aktif ajanlar kullanılır.
+                Gelişmiş tür analizi ile hedef haşerenin yapısına özel, bağışıklık direnci geliştiremeyen en etkili ilaç formülasyonları kullanılır.
               </p>
             </GlassCard>
             
