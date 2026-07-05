@@ -44,14 +44,14 @@ export default function RootLayout({
     <html lang="tr" className="dark">
       <head>
         {/* Google Analytics (GA4) Placeholder */}
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-GYD22WWKC8"></script>
         <script
           dangerouslySetInnerHTML={{
             __html: `
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-XXXXXXXXXX');
+              gtag('config', 'G-GYD22WWKC8');
             `,
           }}
         />
