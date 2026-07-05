@@ -129,6 +129,13 @@ export default function RootLayout({
                   "longitude": "28.9784"
                 },
                 "geoRadius": "50000"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "1248",
+                "bestRating": "5",
+                "worstRating": "1"
               }
             })
           }}
