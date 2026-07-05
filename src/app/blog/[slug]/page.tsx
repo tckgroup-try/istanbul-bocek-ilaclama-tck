@@ -41,7 +41,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "TCK İlaçlama",
-    "image": \`https://www.tckilaclama.com\${blog.image}\`,
+    "image": "https://www.tckilaclama.com" + blog.image,
     "description": blog.excerpt,
     "telephone": "+905300000000",
     "address": {
@@ -101,7 +101,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
                 {blog.tags.map(tag => (
                   <Link 
                     key={tag} 
-                    href={\`/blog?tag=\${encodeURIComponent(tag)}\`}
+                    href={"/blog?tag=" + encodeURIComponent(tag)}
                     className="px-4 py-2 bg-zinc-900 border border-white/10 rounded-full text-sm text-zinc-400 hover:text-brand hover:border-brand/30 transition-colors"
                   >
                     #{tag}
