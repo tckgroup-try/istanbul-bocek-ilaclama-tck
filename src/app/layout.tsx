@@ -131,6 +131,27 @@ export default function RootLayout({
             })
           }}
         />
+        
+        {/* Mobile App SoftwareApplication Schema */}
+        <Script
+          id="software-app-schema"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "TCK İlaçlama",
+              "operatingSystem": "ANDROID, IOS",
+              "applicationCategory": "BusinessApplication",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "TRY"
+              },
+              "description": "TCK İlaçlama mobil uygulaması ile tesislerinizin hijyen durumunu 7/24 anlık takip edebilir, BRCGS ve HACCP belgelerinizi inceleyebilir ve tek tıkla Acil Müdahale (SOS) ekibimizi çağırabilirsiniz."
+            })
+          }}
+        />
         <FloatingWhatsApp />
       </body>
     </html>

@@ -5,6 +5,7 @@ import { GlassCard } from "@/components/ui/GlassCard";
 import { TrustBadges } from "@/components/TrustBadges";
 import { CostEstimator } from "@/components/CostEstimator";
 import { FAQ } from "@/components/FAQ";
+import { MobileAppPromo } from "@/components/MobileAppPromo";
 
 export default function Home() {
   return (
@@ -52,7 +53,7 @@ export default function Home() {
       <ServiceTab />
       
       <CostEstimator />
-
+      <MobileAppPromo />
       <FAQ />
     </>
   );
