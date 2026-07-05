@@ -11,16 +11,23 @@ export default function NotFound() {
         </div>
         <h1 className="text-6xl md:text-8xl font-bold text-white mb-6 tracking-tight">404</h1>
         <h2 className="text-2xl md:text-3xl font-semibold text-slate-300 mb-4">
-          Böcekler bile bu sayfayı bulamadı!
+          Aradığınız Sayfa Bulunamadı
         </h2>
         <p className="text-slate-400 max-w-md mx-auto mb-10 text-lg">
-          Aradığın sayfa ya kaldırılmış ya da hiç var olmamış abi. Endişe yok, ana sayfaya dönüp dükkanı temizlemeye devam edelim.
+          Ulaşmaya çalıştığınız sayfa taşınmış veya yayından kaldırılmış olabilir. Operasyon ekibimizden doğrudan destek almak için iletişime geçebilirsiniz.
         </p>
-        <Link href="/">
-          <RoseButton className="px-8 py-4 text-lg">
-            Ana Sayfaya Dön
-          </RoseButton>
-        </Link>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Link href="/">
+            <RoseButton className="px-8 py-4 text-lg w-full sm:w-auto">
+              Ana Sayfaya Dön
+            </RoseButton>
+          </Link>
+          <a href="https://wa.me/905300000000?text=Merhaba,%20sitenizde%20bir%20sayfaya%20ula%C5%9Famad%C4%B1m,%20destek%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+            <RoseButton variant="outline" className="px-8 py-4 text-lg w-full sm:w-auto">
+              WhatsApp Destek
+            </RoseButton>
+          </a>
+        </div>
       </div>
     </div>
   );
