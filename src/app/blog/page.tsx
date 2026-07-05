@@ -8,46 +8,75 @@ export const metadata = {
   description: 'İstanbul böcek ilaçlama, fare, kene ve haşere çözümleri hakkında usta işi, şeffaf bilgiler. Ev ve işyeriniz için kesin çözüm rehberi.',
 };
 
-export default function BlogPage() {
+export default async function BlogPage({ searchParams }: { searchParams: { tag?: string } }) {
+  const params = await searchParams;
+  const tagFilter = params.tag;
+  
+  const filteredBlogs = tagFilter 
+    ? blogs.filter(blog => blog.tags?.includes(tagFilter))
+    : blogs;
+
   return (
     <div className="pt-32 pb-24">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Ustanın Not Defteri</h1>
           <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
-            Böcekle, fareyle başın dertteyse doğru yerdesin abi. İstanbul'un dört bir yanından derlediğimiz kesin çözümler ve esnaf tavsiyeleri.
+            {tagFilter 
+              ? \`"\${tagFilter}" etiketi için bulunan sonuçlar.\` 
+              : "Böcekle, fareyle başın dertteyse doğru yerdesin abi. İstanbul'un dört bir yanından derlediğimiz kesin çözümler ve esnaf tavsiyeleri."}
           </p>
+          {tagFilter && (
+            <div className="mt-8">
+              <Link href="/blog" className="inline-flex items-center px-4 py-2 bg-brand/10 text-brand rounded-full text-sm font-medium hover:bg-brand/20 transition-colors">
+                Filtreyi Temizle (Tüm Yazılar)
+              </Link>
+            </div>
+          )}
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {blogs.map((blog) => (
-            <Link key={blog.slug} href={`/blog/${blog.slug}`} className="block h-full">
-              <GlassCard hoverEffect className="h-full flex flex-col p-0 overflow-hidden border-white/5 hover:border-brand/30">
-                <div className="relative h-48 w-full">
-                  <Image 
-                    src={blog.image} 
-                    alt={blog.title} 
-                    fill 
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
-                </div>
-                <div className="p-6 flex flex-col flex-grow">
-                  <div className="text-sm text-brand mb-3">{blog.date}</div>
-                  <h2 className="text-xl font-bold text-white mb-3 line-clamp-2">
-                    {blog.title}
-                  </h2>
-                  <p className="text-zinc-400 mb-4 line-clamp-3 flex-grow">
-                    {blog.excerpt}
-                  </p>
-                  <div className="text-sm font-medium text-brand mt-auto flex items-center group">
-                    Devamını Oku <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+        {filteredBlogs.length === 0 ? (
+          <div className="text-center text-zinc-500 py-12">
+            Bu etikete ait yazı bulunamadı kardo.
+          </div>
+        ) : (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredBlogs.map((blog) => (
+              <Link key={blog.slug} href={\`/blog/\${blog.slug}\`} className="block h-full">
+                <GlassCard hoverEffect className="h-full flex flex-col p-0 overflow-hidden border-white/5 hover:border-brand/30">
+                  <div className="relative h-48 w-full">
+                    <Image 
+                      src={blog.image} 
+                      alt={blog.title} 
+                      fill 
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
                   </div>
-                </div>
-              </GlassCard>
-            </Link>
-          ))}
-        </div>
+                  <div className="p-6 flex flex-col flex-grow">
+                    <div className="text-sm text-brand mb-3">{blog.date}</div>
+                    <h2 className="text-xl font-bold text-white mb-3 line-clamp-2">
+                      {blog.title}
+                    </h2>
+                    <p className="text-zinc-400 mb-4 line-clamp-3 flex-grow">
+                      {blog.excerpt}
+                    </p>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {blog.tags?.slice(0, 2).map(tag => (
+                        <span key={tag} className="text-xs px-2 py-1 bg-zinc-800 rounded-md text-zinc-400">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+                    <div className="text-sm font-medium text-brand mt-auto flex items-center group">
+                      Devamını Oku <span className="ml-2 group-hover:translate-x-1 transition-transform">→</span>
+                    </div>
+                  </div>
+                </GlassCard>
+              </Link>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   );
