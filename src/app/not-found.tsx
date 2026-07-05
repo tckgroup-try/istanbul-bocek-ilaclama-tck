@@ -22,7 +22,7 @@ export default function NotFound() {
               Ana Sayfaya Dön
             </RoseButton>
           </Link>
-          <a href="https://wa.me/905300000000?text=Merhaba,%20sitenizde%20bir%20sayfaya%20ula%C5%9Famad%C4%B1m,%20destek%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/905016355053?text=Merhaba,%20sitenizde%20bir%20sayfaya%20ula%C5%9Famad%C4%B1m,%20destek%20almak%20istiyorum." target="_blank" rel="noopener noreferrer">
             <RoseButton variant="outline" className="px-8 py-4 text-lg w-full sm:w-auto">
               WhatsApp Destek
             </RoseButton>

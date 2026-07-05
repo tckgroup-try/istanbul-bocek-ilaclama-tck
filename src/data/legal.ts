@@ -10,7 +10,7 @@ export const legalPages = [
       <p>Hizmet süreçlerimizin her aşamasında müşteri memnuniyetini en üst düzeyde tutmak, operasyonel hataları sıfıra indirmek ve sürdürülebilir bir hizmet kalitesi sunmak amacıyla ISO 9001:2015 standartlarını uygulamaktayız.</p>
       
       <h3>ISO 14001:2015 Çevre Yönetim Sistemi</h3>
-      <p>Kullandığımız biyosidal ürünlerin ve operasyon süreçlerimizin doğaya verdiği etkiyi minimize etmek, atık yönetimini yasal mevzuatlara uygun olarak gerçekleştirmek şirketimizin temel prensibidir.</p>
+      <p>Kullandığımız ilaçlama ürünlerinin ve operasyon süreçlerimizin doğaya verdiği etkiyi minimize etmek, atık yönetimini yasal mevzuatlara uygun olarak gerçekleştirmek şirketimizin temel prensibidir.</p>
       
       <h3>ISO 45001:2018 İş Sağlığı ve Güvenliği</h3>
       <p>Sahada görev yapan mobil ekiplerimizin ve operasyon yaptığımız alanlardaki insanların sağlığı ve güvenliği her şeyden önce gelir. Çalışanlarımız tam donanımlı KKD (Kişisel Koruyucu Donanım) ile çalışır ve periyodik sağlık taramalarından geçer.</p>
@@ -57,7 +57,7 @@ export const legalPages = [
       <h3>1. Hizmet Kapsamı</h3>
       <p>TCK İlaçlama, randevu alınan tarih ve saatte, anlaşılan alanda (ev, ofis, fabrika vb.) haşere kontrol ve fümigasyon işlemlerini profesyonel şekilde yerine getirmeyi taahhüt eder.</p>
       <h3>2. Fiyatlandırma ve Hesaplama Aracı</h3>
-      <p>Web sitemizde yer alan "Maliyet Analizi" aracı, tahmini bir fiyat sunar. Kesin fiyatlandırma, uzmanlarımızın sahada yapacağı keşif ve laboratuvar analizleri sonrasında kesinleşir.</p>
+      <p>Web sitemizde yer alan "Fiyat Hesaplama" aracı, tahmini bir fiyat sunar. Kesin fiyatlandırma, uzmanlarımızın sahada yapacağı keşif sonrasında kesinleşir.</p>
       <h3>3. Müşteri Sorumlulukları</h3>
       <p>İlaçlama öncesi veya sonrası, uzman ekiplerimizin belirttiği güvenlik kurallarına (belirli bir süre alana girmeme, ıslak temizlik yapmama vb.) uyulması müşterinin sorumluluğundadır. Bu kurallara uyulmaması durumunda oluşabilecek etkinlik kayıplarından şirketimiz sorumlu tutulamaz.</p>
     `

@@ -148,7 +148,7 @@ export default function RootLayout({
               <div className="md:col-span-2">
                 <h3 className="text-xl font-bold text-white mb-4">TCK İlaçlama</h3>
                 <p className="text-slate-400 max-w-sm">
-                  İstanbul'un en profesyonel mobil haşere kontrol laboratuvarı. Biyosidal, kokusuz ve garantili çözümler.
+                  İstanbul genelinde 7/24 profesyonel böcek ve haşere ilaçlama servisi. Kokusuz, güvenli ve garantili çözümler.
                 </p>
               </div>
               <div>
@@ -171,7 +171,7 @@ export default function RootLayout({
               </div>
             </div>
             <div className="text-center text-slate-600 text-sm pt-8 border-t border-white/5">
-              <p>&copy; {new Date().getFullYear()} TCK İlaçlama Laboratuvarları. Tüm hakları saklıdır. TCK Group Kuruluşudur.</p>
+              <p>&copy; {new Date().getFullYear()} TCK İlaçlama. Tüm hakları saklıdır. TCK Group Kuruluşudur.</p>
             </div>
           </div>
         </footer>

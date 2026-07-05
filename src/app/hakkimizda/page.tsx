@@ -5,7 +5,7 @@ import { ShieldCheck, Truck, FlaskConical, Leaf, Target, Award } from 'lucide-re
 
 export const metadata = {
   title: 'Hakkımızda | TCK Group - TCK İlaçlama',
-  description: 'TCK Group güvencesiyle İstanbul\'un en profesyonel mobil haşere kontrol ekibi. Biyosidal, kokusuz ve Sağlık Bakanlığı onaylı ilaçlama teknolojileri.',
+  description: 'TCK Group güvencesiyle İstanbul\'un en profesyonel mobil haşere kontrol ekibi. Kokusuz, güvenli ve Sağlık Bakanlığı onaylı ilaçlama teknolojileri.',
 };
 
 export default function Hakkimizda() {
@@ -56,8 +56,8 @@ export default function Hakkimizda() {
                     <FlaskConical className="w-6 h-6 text-brand" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">Sağlık Bakanlığı & WHO Onaylı Biyosidal Kalkan</h3>
-                    <p className="text-slate-400">Piyasada ucuz maliyetli merdiven altı tarım ilaçları kullanan firmaların aksine, yalnızca insan ve evcil hayvan sağlığına duyarlı, uluslararası standartlarda orijinal "Biyosidal" ürün formülasyonları kullanıyoruz.</p>
+                    <h3 className="text-xl font-bold text-white mb-2">Sağlık Bakanlığı & WHO Onaylı Koruma</h3>
+                    <p className="text-slate-400">Piyasada ucuz maliyetli merdiven altı tarım ilaçları kullanan firmaların aksine, yalnızca insan ve evcil hayvan sağlığına duyarlı, uluslararası standartlarda orijinal onaylı solüsyonlar kullanıyoruz.</p>
                   </div>
                 </div>
 
@@ -138,12 +138,12 @@ export default function Hakkimizda() {
                 TCK İlaçlama kalitesiyle tanışın. Hemen bizi arayın veya Whatsapp'tan yazın, mobil ekibimiz dakikalar içinde yola çıksın.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="tel:05300000000" className="w-full sm:w-auto">
+                <a href="tel:+905016355053" className="w-full sm:w-auto">
                   <RoseButton className="w-full text-lg px-8 py-4">
                     Mobil Ekibi Çağır
                   </RoseButton>
                 </a>
-                <a href="https://wa.me/905300000000?text=Merhaba,%20%C3%BCcretsiz%20ke%C5%9Fif%20ve%20fiyat%20bilgisi%20istiyorum" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
+                <a href="https://wa.me/905016355053?text=Merhaba,%20%C3%BCcretsiz%20ke%C5%9Fif%20ve%20fiyat%20bilgisi%20istiyorum" target="_blank" rel="noopener noreferrer" className="w-full sm:w-auto">
                   <RoseButton variant="outline" className="w-full text-lg px-8 py-4">
                     Ücretsiz Keşif İste
                   </RoseButton>

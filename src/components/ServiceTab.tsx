@@ -121,7 +121,7 @@ export function ServiceTab() {
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
                 <div className="absolute bottom-8 left-8 right-8">
                    <div className="text-3xl font-bold text-white mb-2">{activeTab === 'b2b' ? 'Endüstriyel Güç' : 'Ev Tipi Güvenlik'}</div>
-                   <p className="text-slate-300 text-sm">Sağlık Bakanlığı Onaylı Biyosidal Ürünler ile Kesin Çözüm.</p>
+                   <p className="text-slate-300 text-sm">Sağlık Bakanlığı Onaylı ve Güvenli Solüsyonlar ile Kesin Çözüm.</p>
                 </div>
               </motion.div>
             </AnimatePresence>

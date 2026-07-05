@@ -12,14 +12,14 @@ const pests = [
     id: 'kemirgenler',
     title: 'Kemirgenler (Fare, Sıçan)',
     icon: <Rat className="w-8 h-8 text-brand" />,
-    desc: 'Lojistik tesislerden, lüks sitelere kadar her alanda ciddi sağlık ve izolasyon riski yaratan Rattus norvegicus vb. türlere karşı ileri derece KİG bariyerleri.',
+    desc: 'Lojistik tesislerden, ev ve sitelere kadar her alanda ciddi sağlık ve izolasyon riski yaratan fare türlerine karşı kesin çözüm sunan istasyonlar.',
     link: '/blog/sisli-fare-ilaclama'
   },
   {
     id: 'hamambocekleri',
-    title: 'Hamam Böcekleri (Blattodea)',
+    title: 'Hamam Böcekleri',
     icon: <Bug className="w-8 h-8 text-brand" />,
-    desc: 'Özellikle gıda üretim tesislerinde ve ev mutfaklarında sıcak alanlara yuvalanan bu türleri, domino etkisi yaratan Biyosidal jellerle etkisiz hale getiriyoruz.',
+    desc: 'Özellikle gıda üretim tesislerinde ve ev mutfaklarında sıcak alanlara yuvalanan bu türleri, domino etkisi yaratan özel jel formülleriyle etkisiz hale getiriyoruz.',
     link: '/blog/kadikoy-bocek-ilaclama'
   },
   {
@@ -33,7 +33,7 @@ const pests = [
     id: 'ucanhasereler',
     title: 'Uçan Haşereler (Sinek, Sivrisinek)',
     icon: <Bug className="w-8 h-8 text-brand" />,
-    desc: 'Restoranlar ve yazlık alanlar için havalandırma sistemlerine dahi uygulanan, uçan popülasyonu kaynağında nötralize eden çözümler.',
+    desc: 'Restoranlar ve yazlık alanlar için havalandırma sistemlerine dahi uygulanan, uçan popülasyonu kaynağında yok eden çözümler.',
     link: '/blog'
   }
 ];
@@ -45,13 +45,13 @@ export default function HaserelerPage() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm text-slate-300 mb-6">
             <ShieldCheck className="w-4 h-4 text-brand" />
-            <span>Bilimsel Taksonomik Analiz</span>
+            <span>Profesyonel Haşere Tür Analizi</span>
           </div>
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Zararlı ve <span className="text-brand">Haşere</span> Türleri
           </h1>
           <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-            Hastalık taşıyıcı ve itibar zedeleyici zararlı popülasyonlarının biyolojisini analiz ediyor, spesifik türlere özel müdahale protokolleri (IPM) geliştiriyoruz.
+            Hastalık taşıyıcı ve itibar zedeleyici zararlı popülasyonlarının yapısını analiz ediyor, her türe özel etkili ve kesin çözüm sunan ilaçlama yöntemleri uyguluyoruz.
           </p>
         </div>
 

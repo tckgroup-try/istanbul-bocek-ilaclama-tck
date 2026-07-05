@@ -1,9 +1,7 @@
 "use client";
 
 import React, { useState, useMemo } from 'react';
-import { Home, Building2, Bug, ArrowRight, Sparkles, PhoneCall, ShieldCheck } from 'lucide-react';
-import { GlassCard } from './ui/GlassCard';
-import { motion } from 'framer-motion';
+import { Home, Building2, Bug, ArrowRight, Sparkles, PhoneCall, ShieldCheck, FileText } from 'lucide-react';
 
 type AreaType = 'home' | 'commercial';
 type SizeRange = 'small' | 'medium' | 'large' | 'huge';
@@ -12,15 +10,14 @@ type PestSeverity = 'low' | 'medium' | 'high';
 interface PestOption {
   id: string;
   name: string;
-  basePrice: number;
 }
 
 const pestOptions: PestOption[] = [
-  { id: 'hamambocekleri', name: 'Hamam Böceği / Kalorifer Böceği', basePrice: 400 },
-  { id: 'disparazitler', name: 'Pire / Kene / Tahtakurusu', basePrice: 500 },
-  { id: 'kemirgenler', name: 'Fare / Sıçan', basePrice: 450 },
-  { id: 'ucanhasereler', name: 'Sinek / Sivrisinek / Karınca', basePrice: 350 },
-  { id: 'genel', name: 'Genel Haşere Koruma (Kombin)', basePrice: 600 }
+  { id: 'hamambocekleri', name: 'Hamam Böceği / Kalorifer Böceği' },
+  { id: 'disparazitler', name: 'Pire / Kene / Tahtakurusu' },
+  { id: 'kemirgenler', name: 'Fare / Sıçan' },
+  { id: 'ucanhasereler', name: 'Sinek / Sivrisinek / Karınca' },
+  { id: 'genel', name: 'Genel Haşere Koruma (Kombin)' }
 ];
 
 export function CostEstimator() {
@@ -29,54 +26,26 @@ export function CostEstimator() {
   const [selectedPestId, setSelectedPestId] = useState<string>('hamambocekleri');
   const [severity, setSeverity] = useState<PestSeverity>('low');
 
-  // Realistic price estimation logic
-  const estimatedPrice = useMemo(() => {
-    const pest = pestOptions.find(p => p.id === selectedPestId) || pestOptions[0];
-    let price = pest.basePrice;
-
-    // Area type multiplier
-    if (areaType === 'commercial') {
-      price *= 1.4;
-    }
-
-    // Size multiplier
-    const sizeMultipliers = {
-      small: 1.0,  // 0-75 m²
-      medium: 1.25, // 75-150 m²
-      large: 1.6,  // 150-250 m²
-      huge: 2.2    // 250+ m²
-    };
-    price *= sizeMultipliers[sizeRange];
-
-    // Severity multiplier
-    const severityMultipliers = {
-      low: 1.0,
-      medium: 1.2,
-      high: 1.4
-    };
-    price *= severityMultipliers[severity];
-
-    // Round to nearest 50
-    return Math.round(price / 50) * 50;
-  }, [areaType, sizeRange, selectedPestId, severity]);
-
   const whatsappMessage = useMemo(() => {
     const pestName = pestOptions.find(p => p.id === selectedPestId)?.name || 'Haşere';
     const areaText = areaType === 'home' ? 'Konut/Daire' : 'İş Yeri/Ticari Alan';
     const sizeText = 
-      sizeRange === 'small' ? '0-75 m²' : 
-      sizeRange === 'medium' ? '75-150 m²' : 
-      sizeRange === 'large' ? '150-250 m²' : '250+ m²';
+      sizeRange === 'small' ? '0-75 m² (1+1 / 2+1)' : 
+      sizeRange === 'medium' ? '75-150 m² (3+1 / 4+1)' : 
+      sizeRange === 'large' ? '150-250 m² (Dubleks / Ofis)' : '250+ m² (Villa / Depo)';
+    const severityText = 
+      severity === 'low' ? 'Hafif / Önleyici (Tek tük görülme)' :
+      severity === 'medium' ? 'Orta Derece (Sık karşılaşma)' : 'Yoğun İstila (Yuvalanma belirtisi)';
     
     return encodeURIComponent(
-      `Merhaba, web sitenizdeki hesaplama aracından fiyat teklifi aldım.\n\n` +
+      `Merhaba, web sitenizden alan bilgilerimi girerek özel fiyat teklifi almak istiyorum.\n\n` +
       `📌 Alan Türü: ${areaText}\n` +
       `📐 Alan Boyutu: ${sizeText}\n` +
       `🕷️ Haşere Türü: ${pestName}\n` +
-      `💰 Hesaplanan Tahmini Fiyat: ${estimatedPrice} TL - ${estimatedPrice + 250} TL\n\n` +
-      `Bu bilgilere göre randevu oluşturmak veya net teklif almak istiyorum.`
+      `⚠️ Yoğunluk/İstila: ${severityText}\n\n` +
+      `Bu bilgilere göre bana özel en uygun fiyat teklifini iletebilir misiniz?`
     );
-  }, [areaType, sizeRange, selectedPestId, estimatedPrice]);
+  }, [areaType, sizeRange, selectedPestId, severity]);
 
   return (
     <section className="py-24 relative overflow-hidden bg-slate-950/40 border-t border-white/5" id="fiyat-hesapla">
@@ -86,13 +55,13 @@ export function CostEstimator() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel border border-brand/20 bg-brand/5 text-sm text-brand font-semibold mb-6">
             <Sparkles className="w-4 h-4 animate-pulse" />
-            <span>Şeffaf Fiyatlandırma</span>
+            <span>Fiyat Teklifi Al</span>
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6">
-            İnteraktif <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-300">Fiyat Hesaplama</span> Sihirbazı
+            Teklif <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-300">Talep Sihirbazı</span>
           </h2>
           <p className="text-base text-slate-400 max-w-2xl mx-auto">
-            İlaçlama yapılacak alanın detaylarını seçin, sürpriz maliyetlerle karşılaşmadan anında tahmini fiyat aralığınızı hesaplayın.
+            İlaçlama yapılacak alanın detaylarını seçin, size özel en uygun fiyat teklifini WhatsApp üzerinden anında alın.
           </p>
         </div>
 
@@ -204,29 +173,24 @@ export function CostEstimator() {
 
           </div>
 
-          {/* Right Side: Estimated Result Display Panel */}
+          {/* Right Side: Action Panel */}
           <div className="md:col-span-5 glass-panel p-6 sm:p-8 rounded-3xl border border-white/10 bg-slate-900/50 flex flex-col justify-between items-center text-center shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 bg-brand/10 blur-[50px] rounded-full pointer-events-none" />
             
             <div className="w-full space-y-6">
               <div className="w-16 h-16 rounded-2xl bg-brand/10 border border-brand/20 flex items-center justify-center mx-auto shadow-[0_0_20px_rgba(16,185,129,0.15)]">
-                <ShieldCheck className="w-8 h-8 text-brand" />
+                <FileText className="w-8 h-8 text-brand" />
               </div>
               
-              <div>
+              <div className="space-y-3">
                 <span className="text-[10px] uppercase font-black tracking-widest text-slate-400">
-                  Hesaplanan Net Aralık
+                  Fiyat Talebi
                 </span>
-                <motion.div 
-                  key={estimatedPrice}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  className="text-4xl sm:text-5xl font-black text-white mt-2 font-mono tracking-tight"
-                >
-                  {estimatedPrice} TL <span className="text-slate-500 text-2xl font-normal">-</span> {estimatedPrice + 250} TL
-                </motion.div>
-                <p className="text-xs text-slate-500 mt-2">
-                  *Fiyatlara KDV dahildir. Jel ve sıvı kokusuz uygulamaların tümünü kapsar.
+                <h3 className="text-2xl font-black text-white leading-tight">
+                  Teklifiniz Hazırlanıyor
+                </h3>
+                <p className="text-sm text-slate-400 leading-relaxed">
+                  Seçtiğiniz kriterlere göre en uygun ve indirimli fiyat teklifini hazırladık. Anında WhatsApp üzerinden fiyatınızı öğrenin.
                 </p>
               </div>
             </div>
@@ -254,7 +218,7 @@ export function CostEstimator() {
                   rel="noopener noreferrer"
                   className="w-full flex items-center justify-center gap-2 bg-brand hover:bg-brand-hover text-white py-4 rounded-xl text-sm font-bold transition-all shadow-lg shadow-brand/20 group"
                 >
-                  <span>Bu Teklifle Rezervasyon Yap</span>
+                  <span>WhatsApp'tan Fiyat Al</span>
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <a

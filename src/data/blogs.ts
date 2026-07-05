@@ -43,7 +43,7 @@ const generateLSIKeywords = (district: string, pest: string) => {
     `${district} ilaçlama fiyatları`,
     `sağlık bakanlığı onaylı ${pest.toLowerCase()} ilacı`,
     `${pest.toLowerCase()} kesin çözüm`,
-    `biyosidal ürün`,
+    `haşere ilacı`,
     `kokusuz ilaçlama`
   ].join(', ');
 };
@@ -84,7 +84,7 @@ const generateCorporateContent = (district: string, pest: string) => {
         ${district} Bölgesi ${pest} İlaçlama Fiyatları
       </h2>
       <p style="margin-bottom: 1.5rem;">
-        Maliyet analizi yapılırken alanın m² büyüklüğü, popülasyonun direnç seviyesi ve kullanılacak kimyasal/biyolojik ajanların türü dikkate alınır. TCK İlaçlama olarak, en ucuzu değil, kalıcı ve garantili olan en doğru çözümü sunuyoruz. 
+        Maliyet analizi yapılırken alanın m² büyüklüğü, popülasyonun direnç seviyesi ve kullanılacak ilaçların türü dikkate alınır. TCK İlaçlama olarak, en ucuzu değil, kalıcı ve garantili olan en doğru çözümü sunuyoruz. 
         Sağlıktan ve hijyenden tasarruf olmaz; kalitesiz ilaçlar yalnızca paranızı israf etmekle kalmaz, mekanınızı da zehirler.
       </p>
 

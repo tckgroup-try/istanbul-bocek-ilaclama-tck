@@ -12,13 +12,13 @@ export default function HizmetlerPage() {
       <div className="container mx-auto px-4 text-center mb-12">
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-panel text-sm text-slate-300 mb-6">
           <ShieldCheck className="w-4 h-4 text-brand" />
-          <span>Uzman Mühendislik Kadrosu</span>
+          <span>Deneyimli Uzman Kadrosu</span>
         </div>
         <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
           Kapsamlı <span className="text-brand">Hizmet</span> Ağımız
         </h1>
         <p className="text-xl text-slate-400 max-w-3xl mx-auto">
-          Sıradan ilaçlama şirketlerinin aksine, işletmenizin operasyonunu 1 dakika bile durdurmadan, evinizde ise sizi yerinizden etmeden %100 garantili, Biyosidal kalkan protokolleri (IPM) uyguluyoruz.
+          Sıradan ilaçlama şirketlerinin aksine, işletmenizin işleyişini 1 dakika bile durdurmadan, evinizde ise düzeninizi bozmadan %100 garantili, profesyonel koruma yöntemleri uyguluyoruz.
         </p>
       </div>
       

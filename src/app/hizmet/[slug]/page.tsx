@@ -82,7 +82,7 @@ export default async function ServiceSlugPage({ params }: { params: Promise<{ sl
             {district} lokasyonundaki {place.toLowerCase()} işletmelerine özel olarak geliştirilen {pest.toLowerCase()} müdahale protokolümüzle %100 hijyen garantisi sunuyoruz.
           </p>
           
-          <a href="https://wa.me/905300000000?text=Merhaba,%20%C3%BCcretsiz%20ke%C5%9Fif%20ve%20teklif%20istiyorum" target="_blank" rel="noopener noreferrer">
+          <a href="https://wa.me/905016355053?text=Merhaba,%20%C3%BCcretsiz%20ke%C5%9Fif%20ve%20teklif%20istiyorum" target="_blank" rel="noopener noreferrer">
             <RoseButton className="text-lg px-8 py-4 shadow-2xl">
               Hemen Keşif ve Teklif İste
             </RoseButton>
