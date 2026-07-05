@@ -27,9 +27,9 @@ export function CostEstimator() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand/10 mb-6">
             <Calculator className="w-8 h-8 text-brand" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Anında Fiyat Hesapla</h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
-            Abi mekanın kaç metrekare olduğunu seç, böceğin türünü işaretle, tahmini fiyat cebine gelsin.
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Maliyet Analizi</h2>
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg">
+            Alanınızın büyüklüğünü ve karşılaştığınız haşere türünü belirterek anında tahmini maliyet analizi alabilirsiniz.
           </p>
         </div>
 
@@ -39,8 +39,8 @@ export function CostEstimator() {
             {/* Sol Taraf: Kontroller */}
             <div className="space-y-8">
               <div>
-                <label className="flex justify-between text-sm font-medium text-zinc-300 mb-4">
-                  <span>Mekan Kaç Metrekare Abi?</span>
+                <label className="flex justify-between text-sm font-medium text-slate-300 mb-4">
+                  <span>Alan Büyüklüğü (m²)</span>
                   <span className="text-brand font-bold">{area} m²</span>
                 </label>
                 <input 
@@ -50,38 +50,38 @@ export function CostEstimator() {
                   step="50"
                   value={area}
                   onChange={(e) => setArea(Number(e.target.value))}
-                  className="w-full accent-brand h-2 bg-zinc-800 rounded-lg appearance-none cursor-pointer"
+                  className="w-full accent-brand h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer"
                 />
-                <div className="flex justify-between text-xs text-zinc-500 mt-2">
+                <div className="flex justify-between text-xs text-slate-500 mt-2">
                   <span>50 m²</span>
                   <span>2000+ m²</span>
                 </div>
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-zinc-300 mb-4">Haşere / Zararlı Türü</label>
-                <div className="grid grid-cols-2 gap-3">
+                <label className="block text-sm font-medium text-slate-300 mb-4">Haşere / Zararlı Türü</label>
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   <button 
                     onClick={() => setPestType('yuruyen')}
-                    className={`py-3 px-4 rounded-xl border text-sm font-medium transition-all ${pestType === 'yuruyen' ? 'bg-brand/20 border-brand text-brand' : 'bg-zinc-800/50 border-white/5 text-zinc-400 hover:bg-zinc-800'}`}
+                    className={`py-3 px-2 sm:px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all ${pestType === 'yuruyen' ? 'bg-brand/20 border-brand text-brand' : 'bg-slate-800/50 border-white/5 text-slate-400 hover:bg-slate-800'}`}
                   >
                     Yürüyen Haşere
                   </button>
                   <button 
                     onClick={() => setPestType('ucan')}
-                    className={`py-3 px-4 rounded-xl border text-sm font-medium transition-all ${pestType === 'ucan' ? 'bg-brand/20 border-brand text-brand' : 'bg-zinc-800/50 border-white/5 text-zinc-400 hover:bg-zinc-800'}`}
+                    className={`py-3 px-2 sm:px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all ${pestType === 'ucan' ? 'bg-brand/20 border-brand text-brand' : 'bg-slate-800/50 border-white/5 text-slate-400 hover:bg-slate-800'}`}
                   >
                     Uçan Haşere
                   </button>
                   <button 
                     onClick={() => setPestType('kemirgen')}
-                    className={`py-3 px-4 rounded-xl border text-sm font-medium transition-all ${pestType === 'kemirgen' ? 'bg-brand/20 border-brand text-brand' : 'bg-zinc-800/50 border-white/5 text-zinc-400 hover:bg-zinc-800'}`}
+                    className={`py-3 px-2 sm:px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all ${pestType === 'kemirgen' ? 'bg-brand/20 border-brand text-brand' : 'bg-slate-800/50 border-white/5 text-slate-400 hover:bg-slate-800'}`}
                   >
                     Kemirgenler
                   </button>
                   <button 
                     onClick={() => setPestType('ozel')}
-                    className={`py-3 px-4 rounded-xl border text-sm font-medium transition-all ${pestType === 'ozel' ? 'bg-brand/20 border-brand text-brand' : 'bg-zinc-800/50 border-white/5 text-zinc-400 hover:bg-zinc-800'}`}
+                    className={`py-3 px-2 sm:px-4 rounded-xl border text-xs sm:text-sm font-medium transition-all ${pestType === 'ozel' ? 'bg-brand/20 border-brand text-brand' : 'bg-slate-800/50 border-white/5 text-slate-400 hover:bg-slate-800'}`}
                   >
                     Özel Müdahale
                   </button>
@@ -92,8 +92,8 @@ export function CostEstimator() {
             {/* Sağ Taraf: Sonuç */}
             <div className="relative">
               <div className="absolute inset-0 bg-brand/20 blur-3xl rounded-full z-0"></div>
-              <div className="relative z-10 bg-zinc-900 border border-white/10 rounded-3xl p-8 text-center flex flex-col items-center justify-center h-full">
-                <span className="text-zinc-400 text-sm font-medium uppercase tracking-wider mb-2">Tahmini Hesap (Başlangıç)</span>
+              <div className="relative z-10 bg-slate-900 border border-white/10 rounded-3xl p-8 text-center flex flex-col items-center justify-center h-full">
+                <span className="text-slate-400 text-sm font-medium uppercase tracking-wider mb-2">Tahmini Hesap (Başlangıç)</span>
                 <motion.div 
                   key={estimatedTotal}
                   initial={{ opacity: 0, scale: 0.8 }}
@@ -102,15 +102,20 @@ export function CostEstimator() {
                 >
                   ₺{estimatedTotal.toLocaleString('tr-TR')}
                 </motion.div>
-                <p className="text-xs text-zinc-500 mb-8 max-w-xs mx-auto">
-                  * Kesin fiyatı mekanı görünce konuşuruz abi, ama üç aşağı beş yukarı bütçen bu olur.
+                <p className="text-xs text-slate-500 mb-8 max-w-xs mx-auto">
+                  * Belirtilen tutar tahmini bir başlangıç fiyatıdır. Kesin maliyet, alanın detaylı ekspertizi sonrasında belirlenmektedir.
                 </p>
-                <Link href={`/teklif-al?area=${area}&type=${pestType}`} className="w-full">
+                <a 
+                  href={`https://wa.me/905300000000?text=${encodeURIComponent(`Merhaba, ${area} m² alan için ${pestType === 'yuruyen' ? 'Yürüyen Haşere' : pestType === 'ucan' ? 'Uçan Haşere' : pestType === 'kemirgen' ? 'Kemirgen' : 'Özel Müdahale'} sorunu hakkında bilgi almak istiyorum. Sitenizden yaptığım maliyet analizinde tahmini tutar ${estimatedTotal} TL olarak hesaplandı. Konuyla ilgili destek ve kesin fiyat alabilir miyim?`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full"
+                >
                   <RoseButton className="w-full py-4 text-lg">
-                    Bu Fiyatla Usta Çağır
+                    WhatsApp'tan Fiyat Al
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </RoseButton>
-                </Link>
+                </a>
               </div>
             </div>
           </div>

@@ -1,17 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-brand: #e11d48; /* Rose 600 */
-  --color-brand-hover: #be123c; /* Rose 700 */
-  --color-bg-dark: #18181b; /* Zinc 900 */
-  --color-bg-glass: rgba(24, 24, 27, 0.7);
+  --color-brand: #10b981; /* Emerald 500 (Green) */
+  --color-brand-hover: #059669; /* Emerald 600 */
+  --color-bg-dark: #0f172a; /* Slate 900 (Dark Blue) */
+  --color-bg-glass: rgba(15, 23, 42, 0.8);
   --color-bg-glass-light: rgba(255, 255, 255, 0.05);
-  --color-border-glass: rgba(255, 255, 255, 0.1);
+  --color-border-glass: rgba(59, 130, 246, 0.2); /* Blue border tint */
 }
 
 :root {
-  --background: #18181b; /* Zinc-900 */
-  --foreground: #f4f4f5; /* Zinc-100 */
+  --background: #0f172a; /* Dark Blue */
+  --foreground: #f8fafc; /* Slate 50 (White) */
 }
 
 @layer base {

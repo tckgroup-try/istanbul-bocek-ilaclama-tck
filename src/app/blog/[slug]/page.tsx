@@ -65,7 +65,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
       />
       <article className="pt-32 pb-24">
         <div className="container mx-auto px-4 max-w-4xl">
-          <Link href="/blog" className="inline-flex items-center text-zinc-400 hover:text-brand mb-8 transition-colors">
+          <Link href="/blog" className="inline-flex items-center text-slate-400 hover:text-brand mb-8 transition-colors">
             <ArrowLeft className="w-4 h-4 mr-2" />
             Ustaların Notlarına Dön
           </Link>
@@ -79,7 +79,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
               className="object-cover"
               priority
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-900/40 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-900/40 to-transparent" />
             
             <div className="absolute bottom-8 left-8 right-8">
               <div className="text-brand font-medium mb-3">{blog.date}</div>
@@ -91,7 +91,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
 
           {/* HTML Content Render with prose */}
           <div 
-            className="prose prose-invert prose-lg max-w-none prose-p:text-zinc-300 prose-p:leading-relaxed prose-headings:text-white prose-a:text-brand mb-16"
+            className="prose prose-invert prose-lg max-w-none prose-p:text-slate-300 prose-p:leading-relaxed prose-headings:text-white prose-a:text-brand mb-16"
             dangerouslySetInnerHTML={{ __html: blog.content }}
           />
 
@@ -104,7 +104,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
                   <Link 
                     key={tag} 
                     href={"/blog?tag=" + encodeURIComponent(tag)}
-                    className="px-4 py-2 bg-zinc-900 border border-white/10 rounded-full text-sm text-zinc-400 hover:text-brand hover:border-brand/30 transition-colors"
+                    className="px-4 py-2 bg-slate-900 border border-white/10 rounded-full text-sm text-slate-400 hover:text-brand hover:border-brand/30 transition-colors"
                   >
                     #{tag}
                   </Link>
@@ -114,9 +114,9 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
           )}
 
           {/* Call to Action */}
-          <div className="bg-zinc-900/50 border border-brand/20 rounded-2xl p-8 text-center">
+          <div className="bg-slate-900/50 border border-brand/20 rounded-2xl p-8 text-center">
             <h3 className="text-2xl font-bold text-white mb-4">Abi Boşver Okumayı, İşi Bize Bırak!</h3>
-            <p className="text-zinc-400 mb-8 max-w-xl mx-auto">
+            <p className="text-slate-400 mb-8 max-w-xl mx-auto">
               Senin vaktin kıymetli. Dert etme, biz yarım saat içinde gelir, mekanı temizler, çıkarız. Kafan rahat etsin.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -13,7 +13,7 @@ export default function Home() {
       <TrustBadges />
       
       {/* Features Section */}
-      <section className="py-20 bg-zinc-900/50 border-y border-white/5 relative z-10">
+      <section className="py-20 bg-slate-900/50 border-y border-white/5 relative z-10">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <GlassCard className="text-center">
@@ -21,7 +21,7 @@ export default function Home() {
                 <ShieldCheck className="w-8 h-8 text-brand" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">%100 Garantili Çözüm</h3>
-              <p className="text-zinc-400">
+              <p className="text-slate-400">
                 Uyguladığımız tüm protokoller, sonuç odaklıdır. Haşere problemine kalıcı olarak veda edin.
               </p>
             </GlassCard>
@@ -31,7 +31,7 @@ export default function Home() {
                 <Target className="w-8 h-8 text-brand" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">Nokta Atışı Müdahale</h3>
-              <p className="text-zinc-400">
+              <p className="text-slate-400">
                 Gelişmiş taksonomik analiz ile haşerenin türüne özel, en etkili biyolojik ve kimyasal ajanlar kullanılır.
               </p>
             </GlassCard>
@@ -41,7 +41,7 @@ export default function Home() {
                 <Zap className="w-8 h-8 text-brand" />
               </div>
               <h3 className="text-xl font-bold text-white mb-3">7/24 Acil Operasyon</h3>
-              <p className="text-zinc-400">
+              <p className="text-slate-400">
                 Kritik tesisler ve acil durumlar için gece gündüz demeden, kokusuz ve hızlı müdahale ekibi hazır.
               </p>
             </GlassCard>

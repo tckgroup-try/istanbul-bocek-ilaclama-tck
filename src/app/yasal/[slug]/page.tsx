@@ -32,7 +32,7 @@ export default async function LegalPage({ params }: { params: { slug: string } }
   return (
     <div className="pt-32 pb-24 min-h-screen">
       <div className="container mx-auto px-4 max-w-4xl">
-        <Link href="/" className="inline-flex items-center text-zinc-400 hover:text-brand mb-8 transition-colors">
+        <Link href="/" className="inline-flex items-center text-slate-400 hover:text-brand mb-8 transition-colors">
           <ArrowLeft className="w-4 h-4 mr-2" />
           Ana Sayfaya Dön
         </Link>
@@ -50,7 +50,7 @@ export default async function LegalPage({ params }: { params: { slug: string } }
           </div>
 
           <div 
-            className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-zinc-300 prose-a:text-brand relative z-10"
+            className="prose prose-invert prose-lg max-w-none prose-headings:text-white prose-p:text-slate-300 prose-a:text-brand relative z-10"
             dangerouslySetInnerHTML={{ __html: page.content }}
           />
         </div>

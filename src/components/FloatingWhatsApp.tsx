@@ -9,14 +9,14 @@ export function FloatingWhatsApp() {
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-green-500 text-white rounded-full shadow-2xl shadow-green-500/50 hover:scale-110 transition-transform duration-300 group"
-      aria-label="WhatsApp'tan Ulaşın"
+      aria-label="WhatsApp Destek Hattı"
     >
       <div className="absolute inset-0 bg-green-400 rounded-full animate-ping opacity-75"></div>
       <MessageCircle className="w-8 h-8 relative z-10" />
       
       {/* Tooltip */}
-      <span className="absolute right-20 bg-zinc-900 text-white text-sm font-medium px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 whitespace-nowrap pointer-events-none">
-        Usta'ya Yaz! 🐛
+      <span className="absolute right-20 bg-slate-900 text-white text-sm font-medium px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity border border-white/10 whitespace-nowrap pointer-events-none">
+        Müşteri Temsilcisine Bağlan
       </span>
     </a>
   );

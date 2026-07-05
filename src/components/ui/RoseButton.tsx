@@ -14,7 +14,7 @@ export function RoseButton({
   isLoading = false,
   ...props
 }: RoseButtonProps) {
-  const baseStyles = 'inline-flex items-center justify-center rounded-xl px-6 py-3 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-zinc-900 disabled:opacity-50 disabled:cursor-not-allowed';
+  const baseStyles = 'inline-flex items-center justify-center rounded-xl px-6 py-3 font-medium transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-brand focus:ring-offset-2 focus:ring-offset-slate-900 disabled:opacity-50 disabled:cursor-not-allowed';
   
   const variants = {
     primary: 'bg-brand text-white hover:bg-brand-hover shadow-lg shadow-brand/20 hover:shadow-brand/40',

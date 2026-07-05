@@ -35,19 +35,19 @@ export function Navbar() {
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          <Link href="/hizmetler" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors">
+          <Link href="/hizmetler" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
             Hizmetler
           </Link>
-          <Link href="/hasereler" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors">
+          <Link href="/hasereler" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
             Haşere Türleri
           </Link>
-          <Link href="/blog" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors">
+          <Link href="/blog" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
             Blog
           </Link>
-          <Link href="/kurumsal" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors">
+          <Link href="/kurumsal" className="text-sm font-medium text-slate-300 hover:text-white transition-colors">
             Kurumsal
           </Link>
-          <a href="tel:+905300000000" className="text-sm font-medium text-brand hover:text-rose-400 transition-colors">
+          <a href="tel:+905300000000" className="text-sm font-medium text-brand hover:text-blue-400 transition-colors">
             0530 000 00 00
           </a>
           <Link href="/teklif-al">
@@ -59,7 +59,7 @@ export function Navbar() {
 
         {/* Mobile Toggle */}
         <button 
-          className="md:hidden text-zinc-300 hover:text-white"
+          className="md:hidden text-slate-300 hover:text-white"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -68,13 +68,13 @@ export function Navbar() {
 
       {/* Mobile Nav */}
       {isMobileMenuOpen && (
-        <div className="md:hidden glass-panel absolute top-full left-0 right-0 border-t border-white/5 p-4 flex flex-col gap-4">
-          <Link href="/hizmetler" className="text-zinc-300 font-medium p-2" onClick={() => setIsMobileMenuOpen(false)}>Hizmetler</Link>
-          <Link href="/hasereler" className="text-zinc-300 font-medium p-2" onClick={() => setIsMobileMenuOpen(false)}>Haşere Türleri</Link>
-          <Link href="/kurumsal" className="text-zinc-300 font-medium p-2" onClick={() => setIsMobileMenuOpen(false)}>Kurumsal</Link>
-          <a href="tel:+905300000000" className="text-brand font-medium p-2">0530 000 00 00</a>
-          <Link href="/teklif-al" onClick={() => setIsMobileMenuOpen(false)}>
-            <RoseButton className="w-full">Acil Teklif Al</RoseButton>
+        <div className="md:hidden glass-panel absolute top-full left-0 right-0 border-t border-white/5 p-6 flex flex-col gap-6 shadow-2xl">
+          <Link href="/hizmetler" className="text-slate-300 font-medium p-3 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Hizmetler</Link>
+          <Link href="/hasereler" className="text-slate-300 font-medium p-3 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Haşere Türleri</Link>
+          <Link href="/kurumsal" className="text-slate-300 font-medium p-3 hover:text-white transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Kurumsal</Link>
+          <a href="tel:+905300000000" className="text-brand font-medium p-3 hover:text-blue-400 transition-colors">0530 000 00 00</a>
+          <Link href="/teklif-al" onClick={() => setIsMobileMenuOpen(false)} className="mt-2">
+            <RoseButton className="w-full py-4 text-lg">Acil Teklif Al</RoseButton>
           </Link>
         </div>
       )}

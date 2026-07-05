@@ -21,7 +21,7 @@ export default async function BlogPage({ searchParams }: { searchParams: { tag?:
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Ustanın Not Defteri</h1>
-          <p className="text-xl text-zinc-400 max-w-2xl mx-auto">
+          <p className="text-xl text-slate-400 max-w-2xl mx-auto">
             {tagFilter 
               ? \`"\${tagFilter}" etiketi için bulunan sonuçlar.\` 
               : "Böcekle, fareyle başın dertteyse doğru yerdesin abi. İstanbul'un dört bir yanından derlediğimiz kesin çözümler ve esnaf tavsiyeleri."}
@@ -36,7 +36,7 @@ export default async function BlogPage({ searchParams }: { searchParams: { tag?:
         </div>
 
         {filteredBlogs.length === 0 ? (
-          <div className="text-center text-zinc-500 py-12">
+          <div className="text-center text-slate-500 py-12">
             Bu etikete ait yazı bulunamadı kardo.
           </div>
         ) : (
@@ -52,19 +52,19 @@ export default async function BlogPage({ searchParams }: { searchParams: { tag?:
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       className="object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent" />
                   </div>
                   <div className="p-6 flex flex-col flex-grow">
                     <div className="text-sm text-brand mb-3">{blog.date}</div>
                     <h2 className="text-xl font-bold text-white mb-3 line-clamp-2">
                       {blog.title}
                     </h2>
-                    <p className="text-zinc-400 mb-4 line-clamp-3 flex-grow">
+                    <p className="text-slate-400 mb-4 line-clamp-3 flex-grow">
                       {blog.excerpt}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
                       {blog.tags?.slice(0, 2).map(tag => (
-                        <span key={tag} className="text-xs px-2 py-1 bg-zinc-800 rounded-md text-zinc-400">
+                        <span key={tag} className="text-xs px-2 py-1 bg-slate-800 rounded-md text-slate-400">
                           #{tag}
                         </span>
                       ))}

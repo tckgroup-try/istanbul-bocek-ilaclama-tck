@@ -7,24 +7,24 @@ import { GlassCard } from './ui/GlassCard';
 
 const faqs = [
   {
-    question: "Abi ilacı sıktıktan sonra evden çıkmamız lazım mı?",
-    answer: "Yok abi, bizim ilaçlar kokusuzdur. Çoluk çocuğa, kediye köpeğe zararı olmaz. Sadece bazı çok ağır pire, tahtakurusu durumlarında (fümigasyon) 4 saat kapalı kalması yeterli, onun dışında rahatsınız."
+    question: "İlaçlama sonrasında alanı terk etmemiz gerekiyor mu?",
+    answer: "Hayır. Kullandığımız biyosidal ürünler kokusuzdur ve insan, çocuk veya evcil hayvan sağlığına zarar vermez. Yalnızca fümigasyon veya yoğun tahtakurusu/pire uygulamalarında alanın 4 saat kapalı kalması tavsiye edilmektedir."
   },
   {
-    question: "Kullandığınız ilaçlar hayvana falan zarar verir mi?",
-    answer: "Kesinlikle hayır yenge. Sağlık Bakanlığı onaylı, en kaliteli ilaçları kullanıyoruz. Canlılara zarar vermeyen özel, pahalı ilaçlardır. Merdiven altı mal kullanmayız."
+    question: "Kullanılan biyosidal ürünler evcil hayvanlara zarar verir mi?",
+    answer: "Kesinlikle hayır. TCK İlaçlama olarak, Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO) onaylı, memeli canlıların sağlığını tehdit etmeyen 1. sınıf profesyonel biyosidal ürünler kullanmaktayız."
   },
   {
-    question: "Bu ilaçlama ne kadar süre idare eder bizi?",
-    answer: "Mekanın durumuna göre 6 ay ile 1 yıl arası kesin garantili çözümdür abi. Zaten dükkan falan iş yapıyorsak periyodik anlaşırız, ömür boyu kafan rahat olur."
+    question: "İlaçlama uygulamasının etki süresi ne kadardır?",
+    answer: "Çevresel faktörlere bağlı olmakla birlikte uygulamalarımız 6 ay ile 1 yıl arasında tam koruma sağlamaktadır. Kurumsal işletmeler için önerdiğimiz periyodik bakım anlaşmaları ile kalıcı ve kesintisiz koruma sunuyoruz."
   },
   {
-    question: "İlaçlama sonrasında temizlik yapalım mı usta?",
-    answer: "Kokusuz ve leke bırakmayan jel ve sıvı attığımız için eşyaları komple yıkamana gerek yok. Sadece ıslak bezle dip köşe silmeyi 1 hafta ertele ki ilacın etkisi kalsın."
+    question: "İlaçlama işleminden sonra temizlik yapılmalı mı?",
+    answer: "Kokusuz ve leke bırakmayan formülasyonlar kullandığımız için detaylı bir eşya yıkamasına gerek yoktur. Uygulamanın tam etki gösterebilmesi adına, ıslak temizliğin dip köşelerde 1 hafta ertelenmesi tavsiye edilir."
   },
   {
-    question: "Gece acil dükkanı bassalar gelir misiniz?",
-    answer: "7/24 arkandayız abi. Özellikle lokanta, otel, fabrika gibi üretimin durmaması gereken yerler için gece ekibimiz arabada hazır bekler."
+    question: "Acil durumlarda ve mesai saatleri dışında hizmetiniz var mı?",
+    answer: "Evet, 7/24 kesintisiz hizmet sunmaktayız. Özellikle restoran, otel ve üretim tesisleri gibi faaliyetin durmaması gereken kurumsal alanlar için acil müdahale ekiplerimiz daima hazırdır."
   }
 ];
 
@@ -42,9 +42,9 @@ export function FAQ() {
           <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand/10 mb-6">
             <HelpCircle className="w-8 h-8 text-brand" />
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Müşterilerin Çok Sorduğu Sorular</h2>
-          <p className="text-zinc-400 text-lg">
-            Abi aklına ne takılıyorsa burada cevabı var. Şeffaf esnafız, gizlimiz saklımız yok.
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Sıkça Sorulan Sorular</h2>
+          <p className="text-slate-400 text-lg">
+            Hizmetlerimiz, kullanılan yöntemler ve güvenlik protokollerimiz hakkında en çok merak edilen soruların yanıtlarını aşağıda bulabilirsiniz.
           </p>
         </div>
 
@@ -61,11 +61,11 @@ export function FAQ() {
                   className="w-full text-left px-8 py-6 flex items-center justify-between focus:outline-none"
                   onClick={() => toggleFaq(index)}
                 >
-                  <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-brand' : 'text-zinc-200'}`}>
+                  <span className={`text-lg font-medium transition-colors ${isOpen ? 'text-brand' : 'text-slate-200'}`}>
                     {faq.question}
                   </span>
                   <ChevronDown 
-                    className={`w-5 h-5 text-zinc-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand' : ''}`} 
+                    className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${isOpen ? 'rotate-180 text-brand' : ''}`} 
                   />
                 </button>
                 <AnimatePresence>
@@ -76,7 +76,7 @@ export function FAQ() {
                       exit={{ height: 0, opacity: 0 }}
                       transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
-                      <div className="px-8 pb-6 text-zinc-400 leading-relaxed border-t border-white/5 pt-4">
+                      <div className="px-8 pb-6 text-slate-400 leading-relaxed border-t border-white/5 pt-4">
                         {faq.answer}
                       </div>
                     </motion.div>
