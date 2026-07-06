@@ -3,8 +3,14 @@ import { ShieldCheck } from 'lucide-react';
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Profesyonel İlaçlama Hizmetleri | TCK İlaçlama',
-  description: 'Kurumsal ve bireysel alanlarda garantili böcek, kemirgen ve haşere ilaçlama çözümleri.',
+  title: 'Profesyonel İlaçlama Hizmetleri İstanbul | TCK İlaçlama – Böcek, Kemirgen, Haşere',
+  description: 'İstanbul\'da kurumsal ve bireysel alanlara özel garantili böcek, kemirgen ve haşere ilaçlama hizmetleri. Fabrika, otel, gemi, ev ve apartman ilaçlamasında 7/24 acil müdahale. İlk keşif ücretsiz!',
+  alternates: { canonical: 'https://tckilaclama.com/hizmetler' },
+  openGraph: {
+    title: 'Haşere İlaçlama Hizmetleri | TCK İlaçlama İstanbul',
+    description: 'Böcek, kemirgen ve haşere sorununuza kalıcı çözüm. 28 ilçede uzman kadro, %100 garanti.',
+    url: 'https://tckilaclama.com/hizmetler',
+  },
 };
 
 export default function HizmetlerPage() {

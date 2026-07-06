@@ -63,33 +63,32 @@ export function HeroSection() {
           </div>
           
           <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tight text-slate-900 leading-[1.1]">
-            Haşere İstilasını <br />
+            İstanbul&apos;da
+            <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand via-emerald-500 to-emerald-600">
-              Kökünden Kazıyın
+              Kesin İlaçlama Çözümü
             </span>
           </h1>
           
           <p className="text-base sm:text-lg md:text-xl text-slate-600 max-w-xl leading-relaxed font-medium">
-            Sıradan ilaçlamayı unutun. Eviniz ve işletmeniz için geliştirilmiş 0 toleranslı profesyonel haşere kontrolü. 45 dakikada acil müdahale, kokusuz, lekesiz ve insan sağlığına zararsız formüllerle %100 kesin çözüm garantisi.
+            Fare, hamam böceği, tahtakurusu, pire — ne olursa olsun. İstanbul’un 28 ilçesinde 45 dakikada sahaya çıkıyoruz. Kokusuz, lekesiz, evcil hayvan dostu ilaçlama formülleriyle <strong>%100 kesin çözüm garantisi</strong> veriyoruz.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-3 pt-4 w-full">
-            <a 
-              href="https://wa.me/905016355053?text=Merhaba,%20acil%20ila%C3%A7lama%20hizmeti%20i%C3%A7in%20fiyat%20almak%20istiyorum."
-              target="_blank"
-              rel="noopener noreferrer"
+            <a
+              href="/iletisim"
               className="w-full sm:w-auto"
             >
               <RoseButton className="w-full text-lg px-8">
-                Hemen Fiyat Al
+                Ücretsiz Teklif Al
                 <ArrowRight className="ml-2 w-5 h-5" />
               </RoseButton>
             </a>
-            <Link href="/hizmetler">
+            <a href="tel:+905016355053" className="w-full sm:w-auto">
               <RoseButton variant="outline" className="w-full sm:w-auto text-lg px-8">
-                Hizmetlerimiz
+                📞 0501 635 50 53
               </RoseButton>
-            </Link>
+            </a>
           </div>
 
           <div className="flex flex-wrap items-center justify-center sm:justify-start gap-6 pt-6">

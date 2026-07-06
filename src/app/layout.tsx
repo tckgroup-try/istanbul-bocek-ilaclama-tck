@@ -18,8 +18,8 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://tckilaclama.com"),
-  title: "🛡️ TCK İlaçlama | İstanbul Böcek & Haşere İlaçlama Servisi",
-  description: "🛡️ İstanbul genelinde 7/24 profesyonel böcek ve haşere ilaçlama servisi. ✅ Sağlık Bakanlığı onaylı, ULV dezenfeksiyon ilaçları ile %100 kesin çözüm ve kalıcı koruma garantisi! 📞 Hemen ücretsiz fiyat teklifi alın.",
+  title: "TCK İlaçlama | İstanbul Böcek & Haşere İlaçlama Servisi – Garantili & 7/24",
+  description: "İstanbul'da 7/24 acil böcek ve haşere ilaçlama hizmeti. Ev, apartman, fabrika, restoran ve gemi ilaçlamasında %100 garantili, kokusuz, Sağlık Bakanlığı onaylı çözüm. 45 dakikada müdahale. Hemen ücretsiz teklif alın: 0501 635 50 53.",
   keywords: [
     // Core Head Terms
     "böcek ilaçlama", "haşere ilaçlama", "haşere kontrol", "istanbul böcek ilaçlama", "ilaçlama şirketleri", "ilaçlama firmaları", 
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
     "garantili böcek ilaçlama", "kokusuz böcek ilaçlama", "sağlık bakanlığı onaylı ilaçlama", "7/24 acil böcek ilaçlama", "en iyi ilaçlama şirketi", "ucuz ilaçlama fiyatları", "ilaçlama servisi", "ilaçlama uzmanı", "böcek ilaçlama fiyatları 2026", "kesin çözüm fare ilaçlama", "biyosidal ürün uygulaması"
   ],
   openGraph: {
-    title: "TCK İlaçlama | Garantili Böcek ve Haşere Kontrol Merkezi",
-    description: "İstanbul genelinde 7/24 acil müdahale, kokusuz ve garantili haşere ilaçlama. Fabrika, restoran, gemi ve evleriniz için profesyonel ilaçlama çözümleri.",
+    title: "TCK İlaçlama | İstanbul'da Garantili Haşere Kontrol Merkezi",
+    description: "İstanbul'un 28 ilçesinde 7/24 acil müdahale, kokusuz ve garantili haşere ilaçlama. Fabrika, restoran, gemi ve evleriniz için profesyonel ilaçlama çözümleri. Hemen arayın: 0501 635 50 53.",
     url: "https://tckilaclama.com",
     siteName: "TCK İlaçlama",
     locale: "tr_TR",

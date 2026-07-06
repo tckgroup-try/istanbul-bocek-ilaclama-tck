@@ -5,8 +5,14 @@ import { ShieldCheck, Truck, FlaskConical, Leaf, Target, Award } from 'lucide-re
 import Script from 'next/script';
 
 export const metadata = {
-  title: 'Hakkımızda | TCK Group - TCK İlaçlama',
-  description: 'TCK Group güvencesiyle İstanbul\'un en profesyonel mobil haşere kontrol ekibi. Kokusuz, güvenli ve Sağlık Bakanlığı onaylı ilaçlama teknolojileri.',
+  title: 'Hakkımızda | TCK İlaçlama – İstanbul\'un Güvenilir İlaçlama Şirketi',
+  description: 'TCK Group bünyesindeki TCK İlaçlama, Sağlık Bakanlığı onaylı ilaçlar, BRCGS-HACCP sertifikalara sahip mobil ekip ve nano-kapsül teknolojisiyle İstanbul\'da garantili haşere kontrolü sağlar. Tanıyın!',
+  alternates: { canonical: 'https://tckilaclama.com/hakkimizda' },
+  openGraph: {
+    title: 'TCK İlaçlama Hakkında | İstanbul\'un Profesyonel Haşere Kontrol Ekibi',
+    description: 'BRCGS, HACCP, ISO 9001 sertifikalara sahip 7/24 mobil ilaçlama ekibi. TCK Group güvencesiyle kokusuz, garantili ve kalıcı çözüm.',
+    url: 'https://tckilaclama.com/hakkimizda',
+  },
 };
 
 export default function Hakkimizda() {
