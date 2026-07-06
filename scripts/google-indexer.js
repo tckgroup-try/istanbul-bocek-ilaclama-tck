@@ -51,7 +51,7 @@ function slugify(text) {
 function generateUrls() {
   const urls = [];
   
-  // Ana ve statik sayfalar
+  // 1. Ana ve statik sayfalar (En yüksek öncelik)
   urls.push(`${BASE_URL}`);
   urls.push(`${BASE_URL}/hizmetler`);
   urls.push(`${BASE_URL}/hakkimizda`);
@@ -59,14 +59,15 @@ function generateUrls() {
   urls.push(`${BASE_URL}/subelerimiz`);
   urls.push(`${BASE_URL}/blog`);
 
-  // Programatik SEO Sayfaları (28 Şube * 9 Mekan * 8 Haşere = 2016 URL)
+  // 2. Tüm 28 İlçenin Genel İlaçlama Sayfaları (İlk gün mutlaka index alması gereken ana yerel sayfalar)
   for (const branch of branches) {
     const districtSlug = slugify(branch.district);
-    
-    // İlçe genel haşere sayfası
     urls.push(`${BASE_URL}/hizmet/istanbul-${districtSlug}-bocek-ilaclama`);
+  }
 
-    // Alt mekan ve haşere kombinasyonları
+  // 3. Alt mekan ve haşere kombinasyonları (Kalan kota ile gün gün indekslenir)
+  for (const branch of branches) {
+    const districtSlug = slugify(branch.district);
     for (const place of PLACES) {
       for (const pest of PESTS) {
         urls.push(`${BASE_URL}/hizmet/istanbul-${districtSlug}-${place}-${pest}-ilaclama`);
