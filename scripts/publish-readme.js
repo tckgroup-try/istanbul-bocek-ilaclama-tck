@@ -69,6 +69,18 @@ const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 async function run() {
   console.log('🚀 Starting ReadMe.com Parasite SEO publishing operation...');
   
+  // Load active slugs map
+  let slugMap = {};
+  const SLUG_MAP_PATH = path.join(__dirname, '..', 'active_slugs.json');
+  if (fs.existsSync(SLUG_MAP_PATH)) {
+    try {
+      slugMap = JSON.parse(fs.readFileSync(SLUG_MAP_PATH, 'utf8'));
+      console.log('📖 Successfully loaded active slugs map for publishing.');
+    } catch (err) {
+      console.warn('⚠️ Could not parse active_slugs.json.');
+    }
+  }
+
   // 1. Fetch category
   let categoryUri = '';
   try {
@@ -150,7 +162,9 @@ async function run() {
     const friendlyDistrict = districtNames[districtSlug] || districtSlug.toUpperCase();
     const friendlyPest = pestNames[pestSlug] || pestSlug.toUpperCase();
 
-    const slug = `istanbul-${districtSlug}-${pestSlug}-ilaclama-rehberi`;
+    // Resolve exact active slug from map
+    const baseSlug = `istanbul-${districtSlug}-${pestSlug}-ilaclama-rehberi`;
+    const activeSlug = slugMap[baseSlug] || baseSlug;
 
     const payload = {
       title: title,
@@ -158,7 +172,7 @@ async function run() {
         body: body,
         type: 'markdown'
       },
-      slug: slug,
+      slug: activeSlug,
       category: {
         uri: categoryUri
       },
@@ -170,7 +184,7 @@ async function run() {
       hidden: false
     };
 
-    console.log(`[${i + 1}/${files.length}] 📄 Publishing "${title}" (Slug: ${slug})...`);
+    console.log(`[${i + 1}/${files.length}] 📄 Publishing "${title}" (Slug: ${activeSlug})...`);
 
     try {
       let docRes = await fetch(`${BASE_URL}/branches/${BRANCH}/guides`, {
@@ -184,7 +198,7 @@ async function run() {
 
       if (docRes.status === 409) {
         // Document already exists, let's update it with PATCH
-        const updateRes = await fetch(`${BASE_URL}/branches/${BRANCH}/guides/${slug}`, {
+        const updateRes = await fetch(`${BASE_URL}/branches/${BRANCH}/guides/${activeSlug}`, {
           method: 'PATCH',
           headers: HEADERS,
           body: JSON.stringify(payload)

@@ -45,3 +45,4 @@ next-env.d.ts
 # API keys and generated files
 /service_account.json
 /parasite-seo/
+/active_slugs.json
