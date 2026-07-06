@@ -16,12 +16,12 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     description: blog.excerpt,
     keywords: blog.tags ? blog.tags.join(', ') : '',
     alternates: {
-      canonical: `https://www.tckilaclama.com/blog/${slug}`
+      canonical: `https://tckilaclama.com/blog/${slug}`
     },
     openGraph: {
       title: blog.title,
       description: blog.excerpt,
-      url: `https://www.tckilaclama.com/blog/${slug}`,
+      url: `https://tckilaclama.com/blog/${slug}`,
       type: "article",
       images: [blog.image]
     }
@@ -47,7 +47,7 @@ export default async function BlogDetail({ params }: { params: { slug: string } 
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "TCK İlaçlama",
-    "image": "https://www.tckilaclama.com" + blog.image,
+    "image": "https://tckilaclama.com" + blog.image,
     "description": blog.excerpt,
     "telephone": "+905016355053",
     "address": {

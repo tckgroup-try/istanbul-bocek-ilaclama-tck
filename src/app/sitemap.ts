@@ -20,7 +20,7 @@ const PLACES = ['fabrika', 'ofis', 'apartman', 'restoran', 'villa', 'depo', 'gem
 const PESTS = ['fare', 'bocek', 'pire', 'hamam-bocegi', 'akrep', 'kene', 'tahtakurusu', 'sivrisinek'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://www.tckilaclama.com';
+  const baseUrl = 'https://tckilaclama.com';
 
   // 1. Temel Sayfalar
   const routes = [

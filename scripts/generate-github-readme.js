@@ -63,7 +63,7 @@ function generateReadme() {
 İstanbul genelinde 39 ilçede ve tüm mahallelerde Sağlık Bakanlığı onaylı, kokusuz, garantili ve profesyonel böcek ve haşere ilaçlama hizmeti sunuyoruz.
 
 ## 📞 Hızlı İletişim & Fiyat Teklifi
-* **Resmi Web Sitesi:** [https://www.tckilaclama.com](https://www.tckilaclama.com)
+* **Resmi Web Sitesi:** [https://tckilaclama.com](https://tckilaclama.com)
 * **7/24 Destek Hattı:** [+90 501 635 50 53](tel:+905016355053)
 * **WhatsApp Mesaj Hattı:** [Hemen Canlı Sohbet Başlat](https://wa.me/905016355053?text=Merhaba,%20h%C4%B1zl%C4%B1%20ila%C3%A7lama%20teklifi%20almak%20istiyorum.)
 
@@ -86,16 +86,16 @@ Aşağıdaki bağlantılar, İstanbul genelindeki tüm bölgeler için hazırlad
   const districts = Object.values(istanbulNeighborhoods);
 
   for (const dist of districts) {
-    markdown += `\n### 🏙️ [${dist.districtName} Böcek İlaçlama](https://www.tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-bocek-ilaclama)\n`;
-    markdown += `* **Genel Hizmet Sayfası:** [${dist.districtName} İlaçlama Servisi](https://www.tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-bocek-ilaclama)\n`;
+    markdown += `\n### 🏙️ [${dist.districtName} Böcek İlaçlama](https://tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-bocek-ilaclama)\n`;
+    markdown += `* **Genel Hizmet Sayfası:** [${dist.districtName} İlaçlama Servisi](https://tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-bocek-ilaclama)\n`;
     
     // Generate sitemap link matrix for neighborhoods and key pests (bocek, fare, pire)
     const links = [];
     for (const hood of dist.neighborhoods) {
       const hoodSlug = slugify(hood);
-      links.push(`[${hood} İlaçlama](https://www.tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-${hoodSlug}-bocek-ilaclama)`);
-      links.push(`[${hood} Fare](https://www.tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-${hoodSlug}-fare-ilaclama)`);
-      links.push(`[${hood} Pire](https://www.tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-${hoodSlug}-pire-ilaclama)`);
+      links.push(`[${hood} İlaçlama](https://tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-${hoodSlug}-bocek-ilaclama)`);
+      links.push(`[${hood} Fare](https://tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-${hoodSlug}-fare-ilaclama)`);
+      links.push(`[${hood} Pire](https://tckilaclama.com/hizmet/istanbul-${dist.districtSlug}-${hoodSlug}-pire-ilaclama)`);
     }
 
     markdown += `* **Mahalle Bazlı Hizmet Noktaları:**\n  ${links.join(' | ')}\n`;

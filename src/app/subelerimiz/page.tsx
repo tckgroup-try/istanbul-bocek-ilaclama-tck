@@ -47,7 +47,7 @@ export default function BranchesPage() {
                 "@type": "PestControlService",
                 "name": branch.name,
                 "telephone": "+905016355053",
-                "url": `https://www.tckilaclama.com/hizmet/istanbul-${branch.district.toLowerCase().replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')}-bocek-ilaclama`,
+                "url": `https://tckilaclama.com/hizmet/istanbul-${branch.district.toLowerCase().replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')}-bocek-ilaclama`,
                 "hasMap": branch.url,
                 "address": {
                   "@type": "PostalAddress",

@@ -8,8 +8,8 @@ export default function robots(): MetadataRoute.Robots {
       disallow: ['/api/'],
     },
     sitemap: [
-      'https://www.tckilaclama.com/sitemap.xml',
-      'https://www.tckilaclama.com/geo-sitemap.xml'
+      'https://tckilaclama.com/sitemap.xml',
+      'https://tckilaclama.com/geo-sitemap.xml'
     ],
   };
 }

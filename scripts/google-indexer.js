@@ -17,7 +17,7 @@ const path = require('path');
 const { google } = require('googleapis');
 
 // 1. Yapılandırma ve Veriler
-const BASE_URL = 'https://www.tckilaclama.com';
+const BASE_URL = 'https://tckilaclama.com';
 const PLACES = ['fabrika', 'ofis', 'apartman', 'restoran', 'villa', 'depo', 'gemi', 'otel', 'site'];
 const PESTS = ['fare', 'bocek', 'pire', 'hamam-bocegi', 'akrep', 'kene', 'tahtakurusu', 'sivrisinek'];
 

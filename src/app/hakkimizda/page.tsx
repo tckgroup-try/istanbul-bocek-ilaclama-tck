@@ -25,8 +25,8 @@ export default function Hakkimizda() {
             "mainEntity": {
               "@type": "Organization",
               "name": "TCK İlaçlama",
-              "url": "https://www.tckilaclama.com",
-              "logo": "https://www.tckilaclama.com/images/tck_expert.png",
+              "url": "https://tckilaclama.com",
+              "logo": "https://tckilaclama.com/images/tck_expert.png",
               "parentOrganization": {
                 "@type": "Organization",
                 "name": "TCK Group"

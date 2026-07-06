@@ -17,7 +17,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.tckilaclama.com"),
+  metadataBase: new URL("https://tckilaclama.com"),
   title: "🛡️ TCK İlaçlama | İstanbul Böcek & Haşere İlaçlama Servisi",
   description: "🛡️ İstanbul genelinde 7/24 profesyonel böcek ve haşere ilaçlama servisi. ✅ Sağlık Bakanlığı onaylı, ULV dezenfeksiyon ilaçları ile %100 kesin çözüm ve kalıcı koruma garantisi! 📞 Hemen ücretsiz fiyat teklifi alın.",
   keywords: [
@@ -35,14 +35,14 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TCK İlaçlama | Garantili Böcek ve Haşere Kontrol Merkezi",
     description: "İstanbul genelinde 7/24 acil müdahale, kokusuz ve garantili haşere ilaçlama. Fabrika, restoran, gemi ve evleriniz için profesyonel ilaçlama çözümleri.",
-    url: "https://www.tckilaclama.com",
+    url: "https://tckilaclama.com",
     siteName: "TCK İlaçlama",
     locale: "tr_TR",
     type: "website",
     images: [{ url: "/images/tck_expert.png", width: 1200, height: 630, alt: "TCK İlaçlama Uzmanı" }]
   },
   alternates: {
-    canonical: "https://www.tckilaclama.com",
+    canonical: "https://tckilaclama.com",
   },
   authors: [{ name: "TCK Group" }],
   robots: {
