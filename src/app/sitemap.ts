@@ -29,13 +29,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/hakkimizda',
     '/hasereler',
     '/subelerimiz',
-    '/blog'
+    '/blog',
+    '/iletisim'
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: 'daily' as const,
-    priority: route === '' ? 1 : 0.8,
+    priority: route === '' ? 1 : route === '/iletisim' ? 0.9 : 0.8,
   }));
+
 
   // 2. Programmatic SEO (Local Niches)
   const seoRoutes: MetadataRoute.Sitemap = [];

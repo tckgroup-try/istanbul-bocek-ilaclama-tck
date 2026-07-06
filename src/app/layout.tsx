@@ -86,10 +86,10 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://www.tckilaclama.com/#organization",
+                  "@id": "https://tckilaclama.com/#organization",
                   "name": "TCK İlaçlama",
-                  "url": "https://www.tckilaclama.com",
-                  "logo": "https://www.tckilaclama.com/images/tck_expert.png",
+                  "url": "https://tckilaclama.com",
+                  "logo": "https://tckilaclama.com/images/tck_expert.png",
                   "contactPoint": {
                     "@type": "ContactPoint",
                     "telephone": "+90-501-635-50-53",
@@ -104,17 +104,19 @@ export default function RootLayout({
                 },
                 {
                   "@type": "LocalBusiness",
-                  "@id": "https://www.tckilaclama.com/#localbusiness",
+                  "@id": "https://tckilaclama.com/#localbusiness",
                   "name": "TCK İlaçlama",
-                  "image": "https://www.tckilaclama.com/images/tck_expert.png",
+                  "image": "https://tckilaclama.com/images/tck_expert.png",
                   "telephone": "+905016355053",
-                  "url": "https://www.tckilaclama.com",
+                  "email": "info@tckilaclama.com",
+                  "url": "https://tckilaclama.com",
                   "priceRange": "₺₺",
                   "address": {
                     "@type": "PostalAddress",
-                    "streetAddress": "İstanbul Merkezi",
-                    "addressLocality": "İstanbul",
-                    "addressRegion": "TR",
+                    "streetAddress": "Barbaros Bulvarı No:74",
+                    "addressLocality": "Beşiktaş",
+                    "addressRegion": "İstanbul",
+                    "postalCode": "34349",
                     "addressCountry": "TR"
                   },
                   "geo": {
@@ -174,6 +176,7 @@ export default function RootLayout({
                   <li><a href="/hakkimizda" className="text-slate-500 hover:text-brand transition-colors">Hakkımızda</a></li>
                   <li><a href="/hizmetler" className="text-slate-500 hover:text-brand transition-colors">Hizmetlerimiz</a></li>
                   <li><a href="/blog" className="text-slate-500 hover:text-brand transition-colors">Ustaların Notları (Blog)</a></li>
+                  <li><a href="/iletisim" className="text-slate-500 hover:text-brand transition-colors">İletişim &amp; Teklif Al</a></li>
                   <li><a href="https://wa.me/905016355053?text=Merhaba,%20ila%C3%A7lama%20hizmetleri%20i%C3%A7in%20teklif%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" className="text-slate-500 hover:text-brand transition-colors">WhatsApp ile Hızlı Teklif</a></li>
                 </ul>
               </div>

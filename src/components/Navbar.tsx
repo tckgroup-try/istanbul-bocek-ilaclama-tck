@@ -55,6 +55,9 @@ export function Navbar() {
           <Link href="/hakkimizda" className="text-sm font-medium text-slate-600 hover:text-brand transition-colors">
             Kurumsal
           </Link>
+          <Link href="/iletisim" className="text-sm font-medium text-slate-600 hover:text-brand transition-colors">
+            İletişim
+          </Link>
           <a href="tel:+905016355053" className="text-sm font-medium text-brand hover:text-brand-hover transition-colors">
             0501 635 50 53
           </a>
@@ -81,6 +84,7 @@ export function Navbar() {
           <Link href="/hasereler" className="text-slate-700 font-medium p-3 hover:text-brand transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Haşere Türleri</Link>
           <Link href="/hakkimizda" className="text-slate-700 font-medium p-3 hover:text-brand transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Kurumsal</Link>
           <Link href="/subelerimiz" className="text-slate-700 font-medium p-3 hover:text-brand transition-colors" onClick={() => setIsMobileMenuOpen(false)}>Şubelerimiz</Link>
+          <Link href="/iletisim" className="text-slate-700 font-medium p-3 hover:text-brand transition-colors" onClick={() => setIsMobileMenuOpen(false)}>İletişim</Link>
           <a href="tel:+905016355053" className="text-brand font-medium p-3 hover:text-brand-hover transition-colors">0501 635 50 53</a>
           <a href="https://wa.me/905016355053?text=Merhaba,%20acil%20ila%C3%A7lama%20teklifi%20almak%20istiyorum." target="_blank" rel="noopener noreferrer" onClick={() => setIsMobileMenuOpen(false)} className="mt-2">
             <RoseButton className="w-full py-4 text-lg">Acil Teklif Al</RoseButton>
