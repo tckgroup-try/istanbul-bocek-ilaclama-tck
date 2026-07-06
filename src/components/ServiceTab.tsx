@@ -64,7 +64,7 @@ export function ServiceTab() {
             <ShieldAlert className="w-4 h-4 mr-2" />
             Sağlık Bakanlığı Onaylı Koruma
           </div>
-          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Her Sektöre Özel <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-700">Taktiksel Müdahale</span></h2>
+          <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Her Sektöre Özel <br/><span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-700">Taktiksel İlaçlama Hizmeti</span></h2>
           <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             Sıradan böcek ilaçlamayı unutun. İhtiyaç duyduğunuz alanı seçin, deneyimli uzman kadromuz size özel kalıcı ve garantili haşere kontrol yöntemlerini uygulasın.
           </p>
