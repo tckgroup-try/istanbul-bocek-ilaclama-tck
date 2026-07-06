@@ -177,6 +177,8 @@ export default function RootLayout({
                   <li><a href="/yasal/kvkk-aydinlatma-metni" className="text-slate-500 hover:text-brand transition-colors">KVKK Aydınlatma Metni</a></li>
                   <li><a href="/yasal/gizlilik-politikasi" className="text-slate-500 hover:text-brand transition-colors">Gizlilik Politikası</a></li>
                   <li><a href="/yasal/kullanim-kosullari" className="text-slate-500 hover:text-brand transition-colors">Kullanım Koşulları</a></li>
+                  <li><a href="/tck-ilaclama-kurumsal-rehber.html" target="_blank" className="text-slate-500 hover:text-brand transition-colors">NotebookLM Ekolojik Kılavuz</a></li>
+                  <li><a href="/tck-ilaclama-veriseti.csv" download className="text-slate-500 hover:text-brand transition-colors">Looker / Sheets Veri Seti (CSV)</a></li>
                 </ul>
               </div>
             </div>
