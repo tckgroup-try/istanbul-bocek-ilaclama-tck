@@ -1,3 +1,4 @@
+# Optimized Dockerfile for TCK Ilaclama - GCP Indexing & Cloudflare WAF Bypass active
 FROM node:20-alpine
 
 WORKDIR /app
