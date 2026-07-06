@@ -1,0 +1,25 @@
+# TCK İlaçlama - Workspace Rules & Runes
+
+## 🏗️ Project Architecture
+- **Framework**: Next.js 16 (App Router)
+- **Styling**: Tailwind CSS v4, custom utility systems in `src/app/globals.css`
+- **Database**: Prisma + PostgreSQL (managed via Prisma schema)
+- **Deployment**: Coolify container orchestration on self-hosted VPS
+- **SEO Strategy**: Programmatic local routes, structured JSON-LD schemas, public parasite documentation sync with ReadMe.io
+
+## ⚡ Developer & Agent Commands (Skills)
+* **Start Dev Server**: `npm run dev`
+* **Production Build**: `npm run build`
+* **Run Linting**: `npm run lint`
+* **Database Migration**: `npx prisma db push` / `npx prisma generate`
+* **Generate Parasite SEO Docs**: `node scripts/generate-parasites.js`
+* **Sync docs to ReadMe Git Sync Repo**: `node scripts/push-to-github.js`
+* **Generate GitHub README Sitemap**: `node scripts/generate-github-readme.js`
+* **Ping Search Engines (IndexNow)**: `node scripts/ping-search-engines.js`
+
+## 🛡️ Coding Guidelines (Runes)
+1. **Zero-Waste Policy**: Use O(1) or O(log n) optimization. Keep components modular under `src/components/`.
+2. **Type-Safety Sovereignty**: Strict TypeScript. Banned using `any`.
+3. **Structured Schemas**: Every service page must include `PestControlService`, `FAQPage`, and local `JobPosting` schema tags for Google Search Console compliance.
+4. **Security Protection**: Never commit or hardcode credentials (e.g. GitHub PATs). Use environment variables or extract dynamically from local git remote configurations.
+5. **No Silent Fails**: Wrap async operations (like API calls and file operations) in try-catch blocks and handle rejection gracefully.
