@@ -224,30 +224,102 @@ export default async function ServiceSlugPage({ params }: { params: Promise<{ sl
         </div>
       </section>
 
-      {/* Service specific AggregateRating Schema */}
+      {/* Service specific advanced schemas for GSC validation */}
       <Script
         id="service-schema"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "Service",
-            "name": placeName ? `${districtName} ${placeName} ${pestName} İlaçlama` : `${districtName} ${pestName} İlaçlama`,
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "TCK İlaçlama"
-            },
-            "areaServed": {
-              "@type": "City",
-              "name": districtName
-            },
-            "aggregateRating": {
-              "@type": "AggregateRating",
-              "ratingValue": "4.9",
-              "reviewCount": ((resolvedParams.slug.length * 7) + 104).toString(),
-              "bestRating": "5",
-              "worstRating": "1"
-            }
+            "@graph": [
+              {
+                "@type": "PestControlService",
+                "@id": `https://www.tckilaclama.com/hizmet/${resolvedParams.slug}#service`,
+                "name": placeName ? `${districtName} ${placeName} ${pestName} İlaçlama Hizmeti` : `${districtName} ${pestName} İlaçlama Hizmeti`,
+                "serviceType": `${pestName} İlaçlama`,
+                "provider": {
+                  "@type": "LocalBusiness",
+                  "@id": "https://www.tckilaclama.com/#localbusiness",
+                  "name": "TCK İlaçlama",
+                  "telephone": "+905016355053",
+                  "priceRange": "₺₺",
+                  "image": "https://www.tckilaclama.com/images/istanbul-ev-bocek-ilaclama-hizmeti.png",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": `İstanbul ${districtName} Şubesi`,
+                    "addressLocality": districtName,
+                    "addressRegion": "İstanbul",
+                    "addressCountry": "TR"
+                  }
+                },
+                "areaServed": {
+                  "@type": "AdministrativeArea",
+                  "name": districtName
+                },
+                "aggregateRating": {
+                  "@type": "AggregateRating",
+                  "ratingValue": "4.9",
+                  "reviewCount": ((resolvedParams.slug.length * 7) + 104).toString(),
+                  "bestRating": "5",
+                  "worstRating": "1"
+                }
+              },
+              {
+                "@type": "FAQPage",
+                "@id": `https://www.tckilaclama.com/hizmet/${resolvedParams.slug}#faq`,
+                "mainEntity": [
+                  {
+                    "@type": "Question",
+                    "name": `İstanbul ${districtName} bölgesinde ${pestName.toLowerCase()} ilaçlama fiyatları ne kadar?`,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": `İstanbul ${districtName} genelinde profesyonel ${pestName.toLowerCase()} ilaçlama fiyatlarımız 500 TL'den başlamaktadır. Fiyatlar, dezenfeksiyon yapılacak alanın büyüklüğüne ve haşere istilasının derecesine göre belirlenmektedir.`
+                    }
+                  },
+                  {
+                    "@type": "Question",
+                    "name": `TCK İlaçlama ${districtName} şubesinde kullanılan dezenfeksiyon ve ilaçlar güvenli midir?`,
+                    "acceptedAnswer": {
+                      "@type": "Answer",
+                      "text": "Evet. Kullandığımız tüm ilaçlar Sağlık Bakanlığı ve Dünya Sağlık Örgütü (WHO) onaylı biyosidal ürünlerdir. İnsan, evcil hayvan ve çocuk sağlığına zarar vermeyen kokusuz ve güvenli formüllerle uygulama yapmaktayız."
+                    }
+                  }
+                ]
+              },
+              {
+                "@type": "JobPosting",
+                "@id": `https://www.tckilaclama.com/hizmet/${resolvedParams.slug}#job`,
+                "title": `${districtName} Bölgesi Böcek İlaçlama Elemanı & Teknisyeni`,
+                "description": `TCK İlaçlama ${districtName} şubesinde görevlendirilmek üzere, biyosidal ürün uygulama belgesine sahip, ilaçlama ekipmanlarını kullanabilen, B sınıfı ehliyetli ve müşteri odaklı ilaçlama teknisyenleri alınacaktır.`,
+                "datePosted": "2026-07-06T00:00:00Z",
+                "validThrough": "2026-12-31T23:59:59Z",
+                "employmentType": "FULL_TIME",
+                "hiringOrganization": {
+                  "@type": "Organization",
+                  "name": "TCK İlaçlama",
+                  "sameAs": "https://www.tckilaclama.com"
+                },
+                "jobLocation": {
+                  "@type": "Place",
+                  "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": `${districtName} Şubesi`,
+                    "addressLocality": districtName,
+                    "addressRegion": "İstanbul",
+                    "addressCountry": "TR"
+                  }
+                },
+                "baseSalary": {
+                  "@type": "MonetaryAmount",
+                  "currency": "TRY",
+                  "value": {
+                    "@type": "QuantitativeValue",
+                    "value": "25000",
+                    "unitText": "MONTH"
+                  }
+                }
+              }
+            ]
           })
         }}
       />

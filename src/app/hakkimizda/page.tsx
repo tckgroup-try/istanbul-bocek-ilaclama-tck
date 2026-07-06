@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { RoseButton } from '@/components/ui/RoseButton';
 import { ShieldCheck, Truck, FlaskConical, Leaf, Target, Award } from 'lucide-react';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Hakkımızda | TCK Group - TCK İlaçlama',
@@ -11,6 +12,29 @@ export const metadata = {
 export default function Hakkimizda() {
   return (
     <div className="pt-32 pb-24 overflow-hidden">
+      {/* AboutPage Schema */}
+      <Script
+        id="about-page-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "AboutPage",
+            "name": "Hakkımızda - TCK İlaçlama",
+            "description": "TCK Group bünyesindeki TCK İlaçlama hakkında kurumsal bilgiler ve kalite politikamız.",
+            "mainEntity": {
+              "@type": "Organization",
+              "name": "TCK İlaçlama",
+              "url": "https://www.tckilaclama.com",
+              "logo": "https://www.tckilaclama.com/images/tck_expert.png",
+              "parentOrganization": {
+                "@type": "Organization",
+                "name": "TCK Group"
+              }
+            }
+          })
+        }}
+      />
       {/* Hero Section */}
       <section className="relative mb-24">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-brand/20 blur-[120px] rounded-full pointer-events-none" />

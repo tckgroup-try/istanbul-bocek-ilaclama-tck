@@ -1,5 +1,6 @@
 import { ServiceTab } from '@/components/ServiceTab';
 import { ShieldCheck } from 'lucide-react';
+import Script from 'next/script';
 
 export const metadata = {
   title: 'Profesyonel İlaçlama Hizmetleri | TCK İlaçlama',
@@ -24,6 +25,70 @@ export default function HizmetlerPage() {
       
       {/* ServiceTab bileşeni tüm hizmetleri sekmeli yapıda gösterecektir */}
       <ServiceTab />
+
+      {/* ItemList Schema for better search hierarchy representation */}
+      <Script
+        id="hizmetler-list-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "TCK İlaçlama Hizmetleri",
+            "description": "İstanbul genelinde sunduğumuz kurumsal ve bireysel ilaçlama hizmetlerinin listesi.",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Fabrika ve Üretim Tesisi İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-fabrika-bocek-ilaclama"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Depo ve Lojistik Alan İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-depo-bocek-ilaclama"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Restoran, Cafe ve Otel İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-restoran-bocek-ilaclama"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Plaza ve Ofis İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-ofis-bocek-ilaclama"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "name": "Gemi ve Yat Fümigasyon İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-gemi-bocek-ilaclama"
+              },
+              {
+                "@type": "ListItem",
+                "position": 6,
+                "name": "Ev ve Daire İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-villa-bocek-ilaclama"
+              },
+              {
+                "@type": "ListItem",
+                "position": 7,
+                "name": "Apartman ve Site Ortak Alan İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-apartman-bocek-ilaclama"
+              },
+              {
+                "@type": "ListItem",
+                "position": 8,
+                "name": "Bahçe ve Peyzaj Açık Alan İlaçlama",
+                "url": "https://www.tckilaclama.com/hizmet/istanbul-merkez-site-bocek-ilaclama"
+              }
+            ]
+          })
+        }}
+      />
     </div>
   );
 }

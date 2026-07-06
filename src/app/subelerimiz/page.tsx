@@ -2,6 +2,7 @@ import { Metadata } from 'next';
 import { tckBranches } from '@/data/branches';
 import { MapPin } from 'lucide-react';
 import { BranchesHub } from '@/components/BranchesHub';
+import Script from 'next/script';
 
 export const metadata: Metadata = {
   title: 'Şubelerimiz ve Operasyon Merkezlerimiz | TCK İlaçlama',
@@ -28,6 +29,43 @@ export default function BranchesPage() {
         {/* Dynamic Branch Hub Dashboard */}
         <BranchesHub branches={tckBranches} />
       </div>
+
+      {/* Structured data for all active branches */}
+      <Script
+        id="branches-list-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "TCK İlaçlama Şubeler Listesi",
+            "description": "İstanbul genelindeki 28 aktif ilaçlama şubemiz ve servis noktalarımız.",
+            "itemListElement": tckBranches.map((branch, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "item": {
+                "@type": "PestControlService",
+                "name": branch.name,
+                "telephone": "+905016355053",
+                "url": `https://www.tckilaclama.com/hizmet/istanbul-${branch.district.toLowerCase().replace(/ğ/g, 'g').replace(/ü/g, 'u').replace(/ş/g, 's').replace(/ı/g, 'i').replace(/ö/g, 'o').replace(/ç/g, 'c')}-bocek-ilaclama`,
+                "hasMap": branch.url,
+                "address": {
+                  "@type": "PostalAddress",
+                  "streetAddress": `${branch.district} İlaçlama Şubesi`,
+                  "addressLocality": branch.district,
+                  "addressRegion": "İstanbul",
+                  "addressCountry": "TR"
+                },
+                "geo": {
+                  "@type": "GeoCoordinates",
+                  "latitude": branch.lat,
+                  "longitude": branch.lng
+                }
+              }
+            }))
+          })
+        }}
+      />
     </div>
   );
 }
