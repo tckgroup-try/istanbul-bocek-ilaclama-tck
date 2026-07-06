@@ -1,7 +1,7 @@
 const https = require('https');
 
 const SITEMAP_URL = 'https://tckilaclama.com/sitemap.xml';
-const INDEXNOW_KEY = 'a62886f7b15a45279f046b9a89d3429f';
+const INDEXNOW_KEY = 'd8fb1628d0ee4c9cb1112b0ee3f9828d';
 const INDEXNOW_URLS = [
   'https://tckilaclama.com/',
   'https://tckilaclama.com/hizmetler',

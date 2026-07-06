@@ -1,8 +1,15 @@
 const fs = require('fs');
 const path = require('path');
 
-const keyPath = path.join(__dirname, '..', 'public', 'a62886f7b15a45279f046b9a89d3429f.txt');
-const key = 'a62886f7b15a45279f046b9a89d3429f';
+const key = 'd8fb1628d0ee4c9cb1112b0ee3f9828d';
+const keyPath = path.join(__dirname, '..', 'public', `${key}.txt`);
+
+// Clean up old key file if exists
+const oldKeyPath = path.join(__dirname, '..', 'public', 'a62886f7b15a45279f046b9a89d3429f.txt');
+if (fs.existsSync(oldKeyPath)) {
+  fs.unlinkSync(oldKeyPath);
+  console.log('🧹 Cleaned up old verification key file.');
+}
 
 // Write the key to public folder with absolutely no newlines or spacing
 fs.writeFileSync(keyPath, key, { encoding: 'utf8', flag: 'w' });
