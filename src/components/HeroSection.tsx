@@ -1,14 +1,41 @@
 "use client";
 
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import Image from 'next/image';
 import { RoseButton } from './ui/RoseButton';
-import { ShieldCheck, ArrowRight, Award, FileCheck, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
 import { BackgroundBeams } from './ui/BackgroundBeams';
 
+const SLIDES = [
+  {
+    image: "/images/tck_slider_1.png",
+    title: "Uluslararası Denetim Standartlarına Tam Uyum",
+    badge: "BRCGS, HACCP, IFS, ISO Belgeli Koruma"
+  },
+  {
+    image: "/images/tck_slider_2.png",
+    title: "Kurumsal Alanlarda Sıfır Haşere Toleransı",
+    badge: "Ofis, Fabrika ve Depolar İçin IPM Çözümleri"
+  },
+  {
+    image: "/images/tck_slider_3.png",
+    title: "Hassas Üretim Tesislerinde Kesin Güvence",
+    badge: "Gıda Güvenliği Standartlarında Biyosidal Uygulama"
+  }
+];
+
 export function HeroSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % SLIDES.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative pt-40 pb-20 lg:pt-48 lg:pb-32 overflow-hidden min-h-[90vh] flex items-center">
       {/* Background Beams & Particles */}
@@ -101,36 +128,51 @@ export function HeroSection() {
           </div>
         </motion.div>
         
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, delay: 0.2 }}
-          className="hidden md:block relative h-[600px] w-full rounded-3xl overflow-hidden glass-panel border-slate-200 shadow-2xl"
-        >
-          <Image 
-            src="/images/tck_expert.png" 
-            alt="Tam Korumalı TCK İlaçlama Uzmanı" 
-            fill 
-            sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover opacity-90 transition-transform duration-700 hover:scale-105"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-white/80 via-transparent to-transparent z-10" />
-          <div className="absolute bottom-8 left-8 right-8 z-20">
-             <div className="flex items-center gap-3 mb-4">
-                <ShieldCheck className="w-8 h-8 text-brand" />
-                <div className="text-xl font-bold text-slate-800">Uluslararası Denetim Standartlarına Tam Uyum</div>
-             </div>
-             <div className="h-1 w-full bg-slate-200 rounded-full overflow-hidden backdrop-blur-md">
-                <motion.div 
-                  className="h-full bg-brand" 
-                  initial={{ width: 0 }}
-                  animate={{ width: "100%" }}
-                  transition={{ duration: 2, delay: 0.5 }}
-                />
-             </div>
+        <div className="hidden md:block relative h-[600px] w-full rounded-3xl overflow-hidden glass-panel border-slate-200 shadow-2xl">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -20 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <Image 
+                src={SLIDES[currentSlide].image} 
+                alt={SLIDES[currentSlide].title} 
+                fill 
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover opacity-95 transition-transform duration-700 hover:scale-105"
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-white/90 via-transparent to-transparent z-10" />
+              <div className="absolute bottom-8 left-8 right-8 z-20">
+                 <div className="text-xs font-bold text-brand uppercase tracking-wider mb-2">
+                   {SLIDES[currentSlide].badge}
+                 </div>
+                 <div className="flex items-center gap-3">
+                    <ShieldCheck className="w-8 h-8 text-brand flex-shrink-0" />
+                    <h3 className="text-2xl font-bold text-slate-800 leading-tight">{SLIDES[currentSlide].title}</h3>
+                 </div>
+              </div>
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Dots Indicator */}
+          <div className="absolute top-6 right-6 z-30 flex gap-1.5 bg-black/10 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
+            {SLIDES.map((_, index) => (
+              <button
+                key={index}
+                onClick={() => setCurrentSlide(index)}
+                className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
+                  currentSlide === index ? 'bg-brand scale-125' : 'bg-slate-300 hover:bg-slate-400'
+                }`}
+                aria-label={`Slayt ${index + 1}`}
+              />
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );
