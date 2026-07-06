@@ -10,18 +10,24 @@ import { BackgroundBeams } from './ui/BackgroundBeams';
 
 const SLIDES = [
   {
-    image: "/images/tck_slider_1.png",
-    title: "Uluslararası Denetim Standartlarına Tam Uyum",
+    image: "/images/istanbul-ev-bocek-ilaclama-hizmeti.png",
+    alt: "İstanbul ev böcek ilaçlama hizmeti - TCK İlaçlama Sağlık Bakanlığı Onaylı Uzman Ekibi",
+    title: "İstanbul Ev Böcek İlaçlama Hizmeti",
+    heading: "Uluslararası Denetim Standartlarına Tam Uyum",
     badge: "BRCGS, HACCP, IFS, ISO Belgeli Koruma"
   },
   {
-    image: "/images/tck_slider_2.png",
-    title: "Kurumsal Alanlarda Sıfır Haşere Toleransı",
+    image: "/images/kurumsal-ofis-pest-kontrol-firmasi.png",
+    alt: "Kurumsal ofis pest kontrol firması - TCK İlaçlama Plaza ve İşyeri İlaçlama Servisi",
+    title: "Kurumsal Ofis Pest Kontrol Firması",
+    heading: "Kurumsal Alanlarda Sıfır Haşere Toleransı",
     badge: "Ofis, Fabrika ve Depolar İçin IPM Çözümleri"
   },
   {
-    image: "/images/tck_slider_3.png",
-    title: "Hassas Üretim Tesislerinde Kesin Güvence",
+    image: "/images/fabrika-ve-gida-tesisi-ilaclama-servisi.png",
+    alt: "Fabrika ve gıda tesisi ilaçlama servisi - TCK İlaçlama Profesyonel Endüstriyel Hijyen Uygulaması",
+    title: "Fabrika ve Gıda Tesisi İlaçlama Servisi",
+    heading: "Hassas Üretim Tesislerinde Kesin Güvence",
     badge: "Gıda Güvenliği Standartlarında Biyosidal Uygulama"
   }
 ];
@@ -140,7 +146,8 @@ export function HeroSection() {
             >
               <Image 
                 src={SLIDES[currentSlide].image} 
-                alt={SLIDES[currentSlide].title} 
+                alt={SLIDES[currentSlide].alt} 
+                title={SLIDES[currentSlide].title} 
                 fill 
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover opacity-95 transition-transform duration-700 hover:scale-105"
@@ -153,7 +160,7 @@ export function HeroSection() {
                  </div>
                  <div className="flex items-center gap-3">
                     <ShieldCheck className="w-8 h-8 text-brand flex-shrink-0" />
-                    <h3 className="text-2xl font-bold text-slate-800 leading-tight">{SLIDES[currentSlide].title}</h3>
+                    <h3 className="text-2xl font-bold text-slate-800 leading-tight">{SLIDES[currentSlide].heading}</h3>
                  </div>
               </div>
             </motion.div>

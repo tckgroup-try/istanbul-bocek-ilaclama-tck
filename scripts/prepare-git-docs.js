@@ -6,9 +6,9 @@ const DEST_DIR = path.join(__dirname, '..', 'docs', 'Getting Started');
 
 const FILE_MAPPING = {
   'parasite-kadikoy-bocek.md': 'istanbul-kadikoy-bocek-ilaclama-rehberi.md',
-  'parasite-sisli-hamam-bocegi.md': 'istanbul-sisli-hamam-bocegi-ilaclama-rehberi.md',
+  'parasite-sisli-fare.md': 'istanbul-sisli-fare-ilaclama-rehberi.md',
   'parasite-besiktas-pire.md': 'istanbul-besiktas-pire-ilaclama-rehberi.md',
-  'parasite-bakirkoy-fare.md': 'istanbul-bakirkoy-fare-ilaclama-rehberi.md',
+  'parasite-bakirkoy-hamam-bocegi.md': 'istanbul-bakirkoy-hamam-bocegi-ilaclama-rehberi.md',
   'parasite-uskudar-tahtakurusu.md': 'istanbul-uskudar-tahtakurusu-ilaclama-rehberi.md'
 };
 

@@ -40,8 +40,20 @@ async function run() {
 
   // 3. Git operations
   try {
+    let remoteUrl = 'https://github.com/tckgroup-try/bocek-ilaclama-istanbul.git';
+    try {
+      const mainRemote = execSync('git remote get-url origin', { encoding: 'utf-8' }).trim();
+      const match = mainRemote.match(/https:\/\/([^@]+)@/);
+      if (match && match[1]) {
+        remoteUrl = `https://${match[1]}@github.com/tckgroup-try/bocek-ilaclama-istanbul.git`;
+        console.log('🔑 Dynamically configured Git authentication.');
+      }
+    } catch (e) {
+      console.warn('⚠️ Could not dynamically extract credentials, using default URL.');
+    }
+
     runCmd('git init', TEMP_DIR);
-    runCmd('git remote add origin https://github.com/tckgroup-try/bocek-ilaclama-istanbul.git', TEMP_DIR);
+    runCmd(`git remote add origin ${remoteUrl}`, TEMP_DIR);
     runCmd('git branch -M main', TEMP_DIR);
     runCmd('git add .', TEMP_DIR);
     runCmd('git commit -m "feat: upload parasite seo guides with images and CTAs"', TEMP_DIR);
