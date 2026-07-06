@@ -57,8 +57,8 @@ async function run() {
   };
 
   try {
-    console.log(`📡 Submitting URLs to IndexNow API (Bing/Yandex)...`);
-    const res = await fetch('https://api.indexnow.org/indexnow', {
+    console.log(`📡 Submitting URLs to Yandex IndexNow API...`);
+    const res = await fetch('https://yandex.com/indexnow', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json; charset=utf-8'
