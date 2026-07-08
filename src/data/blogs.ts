@@ -47,8 +47,15 @@ const generateLSIKeywords = (district: string, pest: string) => {
     `kokusuz ilaçlama`,
     `böcek ilaçlama`,
     `haşere ilaçlama`,
+    `${district} ilçe ilaçlama`,
+    `${district} ilçe böcek ilaçlama`,
+    `${district} ilçe haşere ilaçlama`,
+    `il ilaçlama`,
     `ilçe ilaçlama`,
-    `il ilaçlama`
+    `il böcek ilaçlama`,
+    `ilçe böcek ilaçlama`,
+    `il haşere ilaçlama`,
+    `ilçe haşere ilaçlama`
   ].join(', ');
 };
 
@@ -97,6 +104,16 @@ const generateCorporateContent = (district: string, pest: string) => {
           T.C. Türk Ceza Kanunu'nun 187. maddesi 1. fıkrası uyarınca: <em>"Kişilerin hayatını ve sağlığını tehlikeye sokacak biçimde ilaç üreten veya satan kimseye bir yıldan beş yıla kadar hapis ve adlî para cezası verilir."</em> Bu sebeple ruhsatsız, eğitimsiz veya Sağlık Bakanlığı yetki belgesi bulunmayan kişilere ev veya iş yerinizde ilaçlama yaptırmak hem aileniz hem de o kişi açısından ciddi hukuki sonuçlar doğurur. Güvenliğiniz için mutlaka <strong>lisanslı ve tescilli bir ilaçlama firması</strong> tercih edin.
         </p>
       </div>
+
+      <h2 style="font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #f43f5e; padding-bottom: 0.5rem; color: #0f172a; font-weight: 700;">
+        İstanbul İl ve İlçe Genelinde Profesyonel Böcek İlaçlama
+      </h2>
+      <p style="margin-bottom: 1.5rem; color: #334155; line-height: 1.8;">
+        Sadece yerel mahalle bazlı değil, İstanbul genelinde geniş kapsamlı <strong>il ilaçlama</strong> ve <strong>ilçe ilaçlama</strong> operasyonları yönetiyoruz. TCK İlaçlama, İstanbul genelinde <strong>il böcek ilaçlama</strong> ağını yöneterek tüm 39 ilçede 7/24 hizmet sunmaktadır. Her bölgeye özel kurduğumuz mobil ekiplerimiz sayesinde <strong>ilçe böcek ilaçlama</strong> taleplerine 45 dakikada hızlı müdahale sağlıyoruz. Evinizi saran haşerelerden kalıcı olarak kurtulmak için en yetkin <strong>il haşere ilaçlama</strong> firmasıyız.
+      </p>
+      <p style="margin-bottom: 1.5rem; color: #334155; line-height: 1.8;">
+        Envanterimizdeki tüm biyosidal ürünler T.C. Sağlık Bakanlığı ruhsatlı olup, <strong>ilçe haşere ilaçlama</strong> prosedürlerine göre her mekana (villa, apartman dairesi, restoran, depo) özel olarak formüle edilir. İstanbul genelinde güvenilir, yasal ve garantili bir <strong>il ilaçlama</strong> veya <strong>ilçe ilaçlama</strong> çözümü arıyorsanız, uzman kadromuzla yanınızdayız.
+      </p>
 
       <h2 style="font-size: 1.8rem; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 2px solid #f43f5e; padding-bottom: 0.5rem; color: #0f172a; font-weight: 700;">
         ${district} ${pest} İlaçlama Fiyatları: Sağlığın Ucuzu Olmaz!
@@ -179,6 +196,29 @@ const generateAggressiveExcerpt = (district: string, pest: string) => {
   return excerpts[pest] || `${district} genelinde ${pest} sorunlarına karşı 7/24 aktif, Sağlık Bakanlığı onaylı ve kesin çözüm garantili profesyonel ilaçlama.`;
 };
 
+const districtCoordinates: Record<string, { lat: number; lng: number }> = {
+  'Kadıköy': { lat: 40.9906, lng: 29.0251 },
+  'Şişli': { lat: 41.0606, lng: 28.9878 },
+  'Beşiktaş': { lat: 41.0422, lng: 29.0075 },
+  'Bakırköy': { lat: 40.9783, lng: 28.8724 },
+  'Pendik': { lat: 40.8769, lng: 29.2583 },
+  'Ümraniye': { lat: 41.0256, lng: 29.1244 },
+  'Sarıyer': { lat: 41.1719, lng: 29.0289 },
+  'Beylikdüzü': { lat: 40.9911, lng: 28.6483 },
+  'Maltepe': { lat: 40.9442, lng: 29.1350 },
+  'Tuzla': { lat: 40.8164, lng: 29.3025 },
+  'Kartal': { lat: 40.8986, lng: 29.1825 },
+  'Zeytinburnu': { lat: 40.9881, lng: 28.8953 },
+  'Ataşehir': { lat: 40.9847, lng: 29.1064 },
+  'Üsküdar': { lat: 41.0269, lng: 29.0156 },
+  'Beykoz': { lat: 41.1342, lng: 29.0967 },
+  'Esenyurt': { lat: 41.0342, lng: 28.6814 },
+  'Avcılar': { lat: 40.9801, lng: 28.7175 },
+  'Fatih': { lat: 41.0186, lng: 28.9392 },
+  'Başakşehir': { lat: 41.1075, lng: 28.7956 },
+  'Eyüpsultan': { lat: 41.0475, lng: 28.9342 }
+};
+
 const generatedBlogs = [];
 let index = 0;
 
@@ -186,6 +226,7 @@ for (const district of districts) {
   for (const pest of pests) {
     const aggressiveTitle = generateAggressiveTitle(district, pest.name);
     const aggressiveExcerpt = generateAggressiveExcerpt(district, pest.name);
+    const coords = districtCoordinates[district] || { lat: 41.0082, lng: 28.9784 };
 
     generatedBlogs.push({
       slug: `${slugify(district)}-${slugify(pest.name)}-ilaclama`,
@@ -194,7 +235,7 @@ for (const district of districts) {
       content: generateCorporateContent(district, pest.name),
       image: getImageForPest(pest.name, index),
       date: `2026-07-${(index % 28) + 1 < 10 ? '0' + ((index % 28) + 1) : (index % 28) + 1}`,
-      geo: { lat: 41.0082, lng: 28.9784, region: district },
+      geo: { lat: coords.lat, lng: coords.lng, region: district },
       tags: [district, `${pest.name} İlaçlama`, 'Garantili İlaçlama', 'Profesyonel Çözüm']
     });
     index++;
