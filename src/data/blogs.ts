@@ -10,15 +10,15 @@ const slugify = (text: string) => {
 };
 
 const pestImages: Record<string, string> = {
-  'Fare': '/images/blog_fare_control.png',
-  'Hamam Böceği': '/images/blog_hamambocek_control.png',
-  'Pire': '/images/blog_pire_control.png',
-  'Kene': '/images/blog_kene_control.png',
-  'Böcek': '/images/blog_bocek_control.png'
+  'Fare': '/images/blog_fare_control.webp',
+  'Hamam Böceği': '/images/blog_hamambocek_control.webp',
+  'Pire': '/images/blog_pire_control.webp',
+  'Kene': '/images/blog_kene_control.webp',
+  'Böcek': '/images/blog_bocek_control.webp'
 };
 
 const getImageForPest = (pest: string) => {
-  return pestImages[pest] || '/images/blog_bocek_control.png';
+  return pestImages[pest] || '/images/blog_bocek_control.webp';
 };
 
 const districts = [
