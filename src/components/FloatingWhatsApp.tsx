@@ -1,6 +1,7 @@
 'use client';
 
 import { MessageCircle, PhoneCall } from 'lucide-react';
+import { trackPhoneClick, trackWhatsAppClick } from '@/lib/analytics';
 
 export function FloatingWhatsApp() {
   return (
@@ -8,6 +9,7 @@ export function FloatingWhatsApp() {
       {/* Phone Call (Left Side) */}
       <a
         href="tel:+905016355053"
+        onClick={() => trackPhoneClick('floating_widget_left')}
         className="fixed bottom-6 left-6 z-50 flex items-center justify-center w-16 h-16 bg-brand text-white rounded-full shadow-2xl shadow-brand/50 hover:scale-110 transition-transform duration-300 group"
         aria-label="Acil Müdahale Hattı"
       >
@@ -22,6 +24,7 @@ export function FloatingWhatsApp() {
       {/* WhatsApp (Right Side) */}
       <a
         href="https://wa.me/905016355053?text=Merhaba,%20kurumsal%20ila%C3%A7lama%20hizmeti%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum."
+        onClick={() => trackWhatsAppClick('floating_widget_right')}
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 flex items-center justify-center w-16 h-16 bg-[#25D366] text-white rounded-full shadow-2xl shadow-green-500/50 hover:scale-110 transition-transform duration-300 group"
